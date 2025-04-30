@@ -1,0 +1,2551 @@
+DEBUG Loaded flyctl config from/home/ace007bk/.fly/config.yml
+DEBUG determined hostname: "penguin"
+DEBUG determined working directory: "/home/ace007bk"
+DEBUG determined config directory: "/home/ace007bk/.fly"
+DEBUG ensured config directory exists.
+DEBUG ensured config directory perms.
+DEBUG cache loaded.
+DEBUG config initialized.
+DEBUG skipped querying for new release
+DEBUG checking for updates...
+DEBUG client initialized.
+DEBUG app config loaded from /home/ace007bk/fly.toml
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (549.02ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG app config loaded from /home/ace007bk/fly.toml
+DEBUG Starting task manager
+DEBUG monitoring tokens at /home/ace007bk/.fly/config.yml
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query ($appName: String!) { appbasic:app(name: $appName) { id name platformVersion organization { id internalNumericId slug rawSlug paidPlan } } }",
+  "variables": {
+    "appName": "ace007bk"
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (488.61ms)
+
+DEBUG {
+  "data": {
+    "appbasic": {
+      "id": "ace007bk",
+      "name": "ace007bk",
+      "platformVersion": "machines",
+      "organization": {
+        "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+        "internalNumericId": "1060900",
+        "slug": "personal",
+        "rawSlug": "ace-718",
+        "paidPlan": true
+      }
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": []
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (102.83ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG started agent process (pid: 14139, log: /home/ace007bk/.fly/agent-logs/1252767448.log)
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token= (787.52ms)
+
+DEBUG {
+  "data": [
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:39.226615679Z",
+        "message": "2025-04-30T13:15:39.226568449 [01JT3D39WAX9E6ZC0GNVECVC87:main] Running Firecracker v1.7.0",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:39.977612246Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting init (commit: dd0aead)...",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:39.10989Z",
+        "message": "[PM05] failed to connect to machine: gave up after 15 attempts (in 22.113359579s)",
+        "level": "error",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.0655546Z",
+        "message": "\u001b[32m INFO\u001b[0m Preparing to run: `python app.py` as root",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.073179277Z",
+        "message": "\u001b[32m INFO\u001b[0m [fly api proxy] listening at /.fly/api",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.132757424Z",
+        "message": "Machine started in 984ms",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.135473594Z",
+        "message": "Traceback (most recent call last):",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.135741157Z",
+        "message": "  File \"/app/app.py\", line 1, in \u003cmodule\u003e",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.135746635Z",
+        "message": "    from flask import Flask, request",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.136334Z",
+        "message": "machine started in 994.62738ms",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.137890005Z",
+        "message": "ModuleNotFoundError: No module named 'flask'",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:40.317441499Z",
+        "message": "2025/04/30 13:15:40 INFO SSH listening listen_address=[fdaa:16:eea8:a7b:379:3822:1363:2]:22",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:41.072969908Z",
+        "message": "\u001b[32m INFO\u001b[0m Main child exited normally with code: 1",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:41.086883977Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting clean up.",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:41.823511355Z",
+        "message": "\u001b[33m WARN\u001b[0m could not unmount /rootfs: EINVAL: Invalid argument",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:41.823951045Z",
+        "message": "[    2.526156] reboot: Restarting system",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:41.998348981Z",
+        "message": "machine has reached its max restart count of 10",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:45.325038Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 5.188679625s so far)",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:51.328799Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 11.192430162s so far)",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:15:57.306264Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 17.169891413s so far)",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:02.458246Z",
+        "message": "Starting machine",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:02.540777425Z",
+        "message": "2025-04-30T13:16:02.540735906 [01JT3D39WDV7CPQF8Q2RNA35CW:main] Running Firecracker v1.7.0",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:02.309103Z",
+        "message": "[PM05] failed to connect to machine: gave up after 15 attempts (in 22.172640756s)",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:02.346788Z",
+        "message": "[PR04] could not find a good candidate within 2 attempts at load balancing",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.319337354Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting init (commit: dd0aead)...",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.409375503Z",
+        "message": "\u001b[32m INFO\u001b[0m Preparing to run: `python app.py` as root",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.411210512Z",
+        "message": "\u001b[32m INFO\u001b[0m [fly api proxy] listening at /.fly/api",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.461228313Z",
+        "message": "Machine started in 996ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.463535Z",
+        "message": "machine started in 1.006390871s",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.470450248Z",
+        "message": "Traceback (most recent call last):",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.470466034Z",
+        "message": "  File \"/app/app.py\", line 1, in \u003cmodule\u003e",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.470466714Z",
+        "message": "    from flask import Flask, request",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.470543348Z",
+        "message": "ModuleNotFoundError: No module named 'flask'",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:03.642183303Z",
+        "message": "2025/04/30 13:16:03 INFO SSH listening listen_address=[fdaa:16:eea8:a7b:3b1:bdde:9fdb:2]:22",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:04.419037987Z",
+        "message": "\u001b[32m INFO\u001b[0m Main child exited normally with code: 1",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:04.433671792Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting clean up.",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:05.273363984Z",
+        "message": "\u001b[33m WARN\u001b[0m could not unmount /rootfs: EINVAL: Invalid argument",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:05.273875108Z",
+        "message": "[    2.663172] reboot: Restarting system",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:05.466507688Z",
+        "message": "machine has reached its max restart count of 10",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:08.948902Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 5.485336545s so far)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:16:14.952605Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 11.489036967s so far)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:15.783087Z",
+        "message": "Starting machine",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:15.864965969Z",
+        "message": "2025-04-30T13:18:15.864929118 [01JT3D39WDV7CPQF8Q2RNA35CW:main] Running Firecracker v1.7.0",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.619220116Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting init (commit: dd0aead)...",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.704461919Z",
+        "message": "\u001b[32m INFO\u001b[0m Preparing to run: `python app.py` as root",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.711602716Z",
+        "message": "\u001b[32m INFO\u001b[0m [fly api proxy] listening at /.fly/api",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.766747222Z",
+        "message": "Traceback (most recent call last):",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.766969348Z",
+        "message": "  File \"/app/app.py\", line 1, in \u003cmodule\u003e",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.766974106Z",
+        "message": "    from flask import Flask, request",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.767033185Z",
+        "message": "ModuleNotFoundError: No module named 'flask'",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.768822667Z",
+        "message": "Machine started in 977ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.771022Z",
+        "message": "machine started in 987.947569ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:16.941861465Z",
+        "message": "2025/04/30 13:18:16 INFO SSH listening listen_address=[fdaa:16:eea8:a7b:3b1:bdde:9fdb:2]:22",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:17.710962036Z",
+        "message": "\u001b[32m INFO\u001b[0m Main child exited normally with code: 1",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:17.724808861Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting clean up.",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:19.465503359Z",
+        "message": "\u001b[33m WARN\u001b[0m could not unmount /rootfs: EINVAL: Invalid argument",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:19.46609031Z",
+        "message": "[    3.532787] reboot: Restarting system",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:19.775323852Z",
+        "message": "machine has reached its max restart count of 10",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:23.249825Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 6.478764592s so far)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:29.253759Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 12.482707353s so far)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:35.25852Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 18.487463469s so far)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:37.287981Z",
+        "message": "Starting machine",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:37.375023252Z",
+        "message": "2025-04-30T13:18:37.374984139 [01JT3D39WAX9E6ZC0GNVECVC87:main] Running Firecracker v1.7.0",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:37.260469Z",
+        "message": "[PM05] failed to connect to machine: gave up after 15 attempts (in 20.489301964s)",
+        "level": "error",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.114500517Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting init (commit: dd0aead)...",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.200098624Z",
+        "message": "\u001b[32m INFO\u001b[0m Preparing to run: `python app.py` as root",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.206984777Z",
+        "message": "\u001b[32m INFO\u001b[0m [fly api proxy] listening at /.fly/api",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.244866547Z",
+        "message": "Machine started in 949ms",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.247131Z",
+        "message": "machine started in 959.17047ms",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.263098543Z",
+        "message": "Traceback (most recent call last):",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.263329445Z",
+        "message": "  File \"/app/app.py\", line 1, in \u003cmodule\u003e",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.263332711Z",
+        "message": "    from flask import Flask, request",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.263935286Z",
+        "message": "ModuleNotFoundError: No module named 'flask'",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:38.42935811Z",
+        "message": "2025/04/30 13:18:38 INFO SSH listening listen_address=[fdaa:16:eea8:a7b:379:3822:1363:2]:22",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:39.207092387Z",
+        "message": "\u001b[32m INFO\u001b[0m Main child exited normally with code: 1",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:39.221547874Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting clean up.",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:42.370494088Z",
+        "message": "\u001b[33m WARN\u001b[0m could not unmount /rootfs: EINVAL: Invalid argument",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:42.370905489Z",
+        "message": "[    4.929264] reboot: Restarting system",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:42.599383857Z",
+        "message": "machine has reached its max restart count of 10",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:45.868205Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 7.62103654s so far)",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:51.85827Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 13.611092438s so far)",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:56.897603Z",
+        "message": "[PR03] could not find a good candidate within 2 attempts at load balancing. last error: [PM05] failed to connect to machine: gave up after 15 attempts (in 18.614212025s)",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.009897Z",
+        "message": "Starting machine",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.090564101Z",
+        "message": "2025-04-30T13:18:57.090517814 [01JT3D39WDV7CPQF8Q2RNA35CW:main] Running Firecracker v1.7.0",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.839876475Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting init (commit: dd0aead)...",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.925744482Z",
+        "message": "\u001b[32m INFO\u001b[0m Preparing to run: `python app.py` as root",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.932358141Z",
+        "message": "\u001b[32m INFO\u001b[0m [fly api proxy] listening at /.fly/api",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.968596389Z",
+        "message": "Machine started in 952ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.970787Z",
+        "message": "machine started in 960.873494ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.996785115Z",
+        "message": "Traceback (most recent call last):",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.9967902Z",
+        "message": "  File \"/app/app.py\", line 1, in \u003cmodule\u003e",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.996791165Z",
+        "message": "    from flask import Flask, request",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:57.999309441Z",
+        "message": "ModuleNotFoundError: No module named 'flask'",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:58.182430506Z",
+        "message": "2025/04/30 13:18:58 INFO SSH listening listen_address=[fdaa:16:eea8:a7b:3b1:bdde:9fdb:2]:22",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:58.932296145Z",
+        "message": "\u001b[32m INFO\u001b[0m Main child exited normally with code: 1",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:58.946359411Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting clean up.",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:59.688113464Z",
+        "message": "\u001b[33m WARN\u001b[0m could not unmount /rootfs: EINVAL: Invalid argument",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:59.688529251Z",
+        "message": "[    2.530491] reboot: Restarting system",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:18:59.908383477Z",
+        "message": "machine has reached its max restart count of 10",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T13:19:03.477668Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 5.506852493s so far)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    }
+  ],
+  "meta": {
+    "next_token": "1746019143477668000"
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (175.01ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (142.08ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (121.52ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (110.82ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (117ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (119.32ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (121.21ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (150.42ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (125.1ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (134.24ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (133.57ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (113.75ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (146.09ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (114.27ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (152.61ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (182.33ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (104.48ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (123.44ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (102.79ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000 (110.61ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746019143477668000
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (591.47ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (570.97ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG done monitoring tokens
+DEBUG started querying for host issues
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG started querying for statuspage incidents
+DEBUG Task manager done
+DEBUG {
+  "query": "query($appName: String!) { apphostissues:app(name: $appName) { hostIssues { nodes { internalId message createdAt updatedAt } } } }",
+  "variables": {
+    "appName": "ace007bk"
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (498.17ms)
+
+DEBUG {
+  "data": {
+    "apphostissues": {
+      "hostIssues": {
+        "nodes": []
+      }
+    }
+  }
+}
+
+DEBUG querying for host issues resulted to []
+DEBUG querying for statuspage incidents resulted to &{[]}

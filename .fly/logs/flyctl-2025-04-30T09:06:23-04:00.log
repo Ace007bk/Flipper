@@ -1,0 +1,14 @@
+DEBUG Loaded flyctl config from/home/ace007bk/.fly/config.yml
+DEBUG determined hostname: "penguin"
+DEBUG determined working directory: "/home/ace007bk"
+DEBUG determined config directory: "/home/ace007bk/.fly"
+DEBUG ensured config directory exists.
+DEBUG ensured config directory perms.
+DEBUG cache loaded.
+DEBUG config initialized.
+DEBUG skipped querying for new release
+DEBUG client initialized.
+DEBUG Starting task manager
+DEBUG Task manager done
+DEBUG Config has metrics token
+

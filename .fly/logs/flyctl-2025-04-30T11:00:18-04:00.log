@@ -1,0 +1,1370 @@
+DEBUG Loaded flyctl config from/home/ace007bk/.fly/config.yml
+DEBUG determined hostname: "penguin"
+DEBUG determined working directory: "/home/ace007bk"
+DEBUG determined config directory: "/home/ace007bk/.fly"
+DEBUG ensured config directory exists.
+DEBUG ensured config directory perms.
+DEBUG cache loaded.
+DEBUG config initialized.
+DEBUG skipped querying for new release
+DEBUG checking for updates...
+DEBUG client initialized.
+DEBUG app config loaded from /home/ace007bk/fly.toml
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (585.56ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG app config loaded from /home/ace007bk/fly.toml
+DEBUG Starting task manager
+DEBUG monitoring tokens at /home/ace007bk/.fly/config.yml
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query { viewer { ... on User { id email enablePaidHobby } ... on Macaroon { email } } }",
+  "variables": null
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (107.06ms)
+
+DEBUG {
+  "data": {
+    "viewer": {
+      "id": "2xPQ6Z4nQaxv5T0vkVy",
+      "email": "americansoil718@gmail.com",
+      "enablePaidHobby": true
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query ($appName: String!) { appcompact:app(name: $appName) { id name hostname deployed network status appUrl platformVersion organization { id internalNumericId slug paidPlan } postgresAppRole: role { name } } }",
+  "variables": {
+    "appName": "ace007bk"
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (150.76ms)
+
+DEBUG {
+  "data": {
+    "appcompact": {
+      "id": "ace007bk",
+      "name": "ace007bk",
+      "hostname": "ace007bk.fly.dev",
+      "deployed": true,
+      "network": "",
+      "status": "deployed",
+      "appUrl": "https://137.66.7.163",
+      "platformVersion": "machines",
+      "postgresAppRole": null,
+      "organization": {
+        "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+        "internalNumericId": "1060900",
+        "slug": "personal",
+        "paidPlan": true
+      }
+    }
+  }
+}
+
+DEBUG trying remote docker daemon
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "\nmutation CreateBuild ($input: CreateBuildInput!) {\n\tcreateBuild(input: $input) {\n\t\tid\n\t\tstatus\n\t}\n}\n",
+  "variables": {
+    "input": {
+      "appName": "ace007bk",
+      "builderType": "depot.dev",
+      "clientMutationId": "",
+      "imageOpts": {
+        "buildArgs": {},
+        "buildPacks": null,
+        "builder": "",
+        "builtIn": "",
+        "builtInSettings": null,
+        "dockerfilePath": "",
+        "extraBuildArgs": null,
+        "imageLabel": "",
+        "imageRef": "",
+        "noCache": false,
+        "publish": true,
+        "tag": "registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+        "target": ""
+      },
+      "machineId": "",
+      "strategiesAvailable": [
+        "depot.dev"
+      ]
+    }
+  },
+  "operationName": "CreateBuild"
+}
+
+DEBUG {0xc000a5a9f0}
+DEBUG <-- 200 https://api.fly.io/graphql (111.69ms)
+
+DEBUG {
+  "data": {
+    "createBuild": {
+      "id": "4864501",
+      "status": "started"
+    }
+  }
+}
+
+DEBUG Trying 'depot.dev' strategy
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "\nmutation EnsureDepotRemoteBuilder ($input: EnsureDepotRemoteBuilderInput!) {\n\tensureDepotRemoteBuilder(input: $input) {\n\t\tbuildId\n\t\tbuildToken\n\t}\n}\n",
+  "variables": {
+    "input": {
+      "appName": "ace007bk",
+      "builderScope": "organization",
+      "clientMutationId": null,
+      "organizationId": null,
+      "region": ""
+    }
+  },
+  "operationName": "EnsureDepotRemoteBuilder"
+}
+
+DEBUG {0xc00079c4b0}
+DEBUG <-- 200 https://api.fly.io/graphql (226.76ms)
+
+DEBUG {
+  "data": {
+    "ensureDepotRemoteBuilder": {
+      "buildId": "tcz8svf5g0",
+      "buildToken": "9d8007b0-266d-4663-89da-88fa7eb601dc"
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (549.08ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (526.58ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (537.94ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG result image:registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7 error:<nil>
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "\nmutation FinishBuild ($input: FinishBuildInput!) {\n\tfinishBuild(input: $input) {\n\t\tid\n\t\tstatus\n\t\twallclockTimeMs\n\t}\n}\n",
+  "variables": {
+    "input": {
+      "appName": "ace007bk",
+      "buildId": "4864501",
+      "builderMeta": {
+        "builderType": "depot.dev",
+        "buildkitEnabled": false,
+        "dockerVersion": "",
+        "platform": "",
+        "remoteAppName": "",
+        "remoteMachineId": ""
+      },
+      "clientMutationId": "",
+      "finalImage": {
+        "id": "sha256:43dec14f078c0aeae3e810a5708292a54651310ee852251c16f2c2a86cb5d8d7",
+        "sizeBytes": 1725396341,
+        "tag": "registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7"
+      },
+      "logs": "",
+      "machineId": "",
+      "status": "completed",
+      "strategiesAttempted": [
+        {
+          "error": "",
+          "note": "",
+          "result": "success",
+          "strategy": "depot.dev"
+        }
+      ],
+      "timings": {
+        "buildAndPushMs": 189192,
+        "buildMs": 197513,
+        "builderInitMs": 8109,
+        "contextBuildMs": -1,
+        "imageBuildMs": 197513,
+        "pushMs": -1
+      }
+    }
+  },
+  "operationName": "FinishBuild"
+}
+
+DEBUG {0xc001e60a50}
+DEBUG <-- 200 https://api.fly.io/graphql (753.86ms)
+
+DEBUG {
+  "data": {
+    "finishBuild": {
+      "id": "4864501",
+      "status": "completed",
+      "wallclockTimeMs": 198267
+    }
+  }
+}
+
+DEBUG --> GET https://api.machines.dev/v1/apps/ace007bk/machines
+
+DEBUG <-- 200 https://api.machines.dev/v1/apps/ace007bk/machines (487.29ms)
+
+DEBUG [
+  {
+    "id": "287654da365138",
+    "name": "autumn-voice-2237",
+    "state": "stopped",
+    "region": "iad",
+    "instance_id": "01JT3JX84G6J46BGTJPQS44YKY",
+    "private_ip": "fdaa:16:eea8:a7b:3b1:bdde:9fdb:2",
+    "config": {
+      "env": {
+        "FLY_PROCESS_GROUP": "app",
+        "PRIMARY_REGION": "iad"
+      },
+      "init": {},
+      "guest": {
+        "cpu_kind": "shared",
+        "cpus": 1,
+        "memory_mb": 1024
+      },
+      "metadata": {
+        "fly_flyctl_version": "0.3.112",
+        "fly_platform_version": "v2",
+        "fly_process_group": "app",
+        "fly_release_id": "q1yZlz2KK40yVc72D3ZzJ58J6",
+        "fly_release_version": "3"
+      },
+      "services": [
+        {
+          "protocol": "tcp",
+          "internal_port": 8080,
+          "autostop": true,
+          "autostart": true,
+          "min_machines_running": 0,
+          "ports": [
+            {
+              "port": 80,
+              "handlers": [
+                "http"
+              ],
+              "force_https": true
+            },
+            {
+              "port": 443,
+              "handlers": [
+                "http",
+                "tls"
+              ]
+            }
+          ],
+          "force_instance_key": null
+        }
+      ],
+      "image": "registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "restart": {
+        "policy": "on-failure",
+        "max_retries": 10
+      }
+    },
+    "incomplete_config": null,
+    "image_ref": {
+      "registry": "registry.fly.io",
+      "repository": "ace007bk",
+      "tag": "deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "digest": "sha256:887c57efcb0c198da072eb9be9fda7dbb0ba00ae043058cfaa96497972712592",
+      "labels": null
+    },
+    "created_at": "2025-04-30T12:41:04Z",
+    "updated_at": "2025-04-30T15:00:55Z",
+    "events": [
+      {
+        "id": "01JT3KE4QVG4BA96A1QTY6S521",
+        "type": "exit",
+        "status": "stopped",
+        "request": {
+          "exit_event": {
+            "requested_stop": true,
+            "restarting": false,
+            "guest_exit_code": 0,
+            "guest_signal": -1,
+            "guest_error": "",
+            "exit_code": 0,
+            "signal": -1,
+            "error": "",
+            "oom_killed": false,
+            "exited_at": "2025-04-30T15:00:48.288Z"
+          },
+          "restart_count": 0
+        },
+        "source": "flyd",
+        "timestamp": 1746025255675
+      },
+      {
+        "id": "01JT3KDX1JWCZDT4FXP62HM0E5",
+        "type": "stop",
+        "status": "stopping",
+        "source": "user",
+        "timestamp": 1746025247794
+      },
+      {
+        "id": "01JT3K0S074AN2QBDD6ATHK50E",
+        "type": "start",
+        "status": "started",
+        "request": {
+          "gpu_spot_price": 0
+        },
+        "source": "flyd",
+        "timestamp": 1746024817671
+      },
+      {
+        "id": "01JT3K0R30EED51RQJZZA9HDBS",
+        "type": "start",
+        "status": "starting",
+        "source": "user",
+        "timestamp": 1746024816736
+      },
+      {
+        "id": "01JT3JYS5NCJZJ88PPDG6VAM8R",
+        "type": "update",
+        "status": "stopped",
+        "source": "flyd",
+        "timestamp": 1746024752309
+      }
+    ],
+    "host_status": "ok"
+  },
+  {
+    "id": "7815e7db09e5e8",
+    "name": "lively-flower-2776",
+    "state": "stopped",
+    "region": "iad",
+    "instance_id": "01JT3JX84DXA5MVZV276VHH3SV",
+    "private_ip": "fdaa:16:eea8:a7b:379:3822:1363:2",
+    "config": {
+      "env": {
+        "FLY_PROCESS_GROUP": "app",
+        "PRIMARY_REGION": "iad"
+      },
+      "init": {},
+      "guest": {
+        "cpu_kind": "shared",
+        "cpus": 1,
+        "memory_mb": 1024
+      },
+      "metadata": {
+        "fly_flyctl_version": "0.3.112",
+        "fly_platform_version": "v2",
+        "fly_process_group": "app",
+        "fly_release_id": "q1yZlz2KK40yVc72D3ZzJ58J6",
+        "fly_release_version": "3"
+      },
+      "services": [
+        {
+          "protocol": "tcp",
+          "internal_port": 8080,
+          "autostop": true,
+          "autostart": true,
+          "min_machines_running": 0,
+          "ports": [
+            {
+              "port": 80,
+              "handlers": [
+                "http"
+              ],
+              "force_https": true
+            },
+            {
+              "port": 443,
+              "handlers": [
+                "http",
+                "tls"
+              ]
+            }
+          ],
+          "force_instance_key": null
+        }
+      ],
+      "image": "registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "restart": {
+        "policy": "on-failure",
+        "max_retries": 10
+      }
+    },
+    "incomplete_config": null,
+    "image_ref": {
+      "registry": "registry.fly.io",
+      "repository": "ace007bk",
+      "tag": "deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "digest": "sha256:887c57efcb0c198da072eb9be9fda7dbb0ba00ae043058cfaa96497972712592",
+      "labels": null
+    },
+    "created_at": "2025-04-30T12:41:55Z",
+    "updated_at": "2025-04-30T14:52:29Z",
+    "events": [
+      {
+        "id": "01JT3JYPSQJJWSAGQ0JYAVB3JM",
+        "type": "update",
+        "status": "stopped",
+        "source": "flyd",
+        "timestamp": 1746024749879
+      },
+      {
+        "id": "01JT3JX852BXFYADFS6Z7DXGGP",
+        "type": "launch",
+        "status": "created",
+        "source": "user",
+        "timestamp": 1746024702114
+      }
+    ],
+    "host_status": "ok"
+  }
+]
+
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "\nmutation CreateRelease ($input: CreateReleaseInput!) {\n\tcreateRelease(input: $input) {\n\t\trelease {\n\t\t\tid\n\t\t\tversion\n\t\t}\n\t}\n}\n",
+  "variables": {
+    "input": {
+      "appId": "ace007bk",
+      "buildId": "4864501",
+      "clientMutationId": "",
+      "definition": {
+        "app": "ace007bk",
+        "primary_region": "iad",
+        "http_service": {
+          "internal_port": 8080,
+          "force_https": true,
+          "auto_stop_machines": true,
+          "auto_start_machines": true,
+          "min_machines_running": 0,
+          "processes": [
+            "app"
+          ]
+        },
+        "vm": [
+          {
+            "memory": "1gb",
+            "cpu_kind": "shared",
+            "cpus": 1
+          }
+        ]
+      },
+      "image": "registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+      "platformVersion": "machines",
+      "strategy": "ROLLING"
+    }
+  },
+  "operationName": "CreateRelease"
+}
+
+DEBUG {0xc000a8fe60}
+DEBUG <-- 200 https://api.fly.io/graphql (8.61s)
+
+DEBUG {
+  "data": {
+    "createRelease": {
+      "release": {
+        "id": "Z960BNMooxl63u8YwywnjM7O4",
+        "version": 4
+      }
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "\nmutation UpdateRelease ($input: UpdateReleaseInput!) {\n\tupdateRelease(input: $input) {\n\t\trelease {\n\t\t\tid\n\t\t}\n\t}\n}\n",
+  "variables": {
+    "input": {
+      "clientMutationId": "",
+      "metadata": null,
+      "releaseId": "Z960BNMooxl63u8YwywnjM7O4",
+      "status": "running"
+    }
+  },
+  "operationName": "UpdateRelease"
+}
+
+DEBUG {0xc001a3b140}
+DEBUG <-- 200 https://api.fly.io/graphql (136.38ms)
+
+DEBUG {
+  "data": {
+    "updateRelease": {
+      "release": {
+        "id": "Z960BNMooxl63u8YwywnjM7O4"
+      }
+    }
+  }
+}
+
+DEBUG --> GET https://api.machines.dev/v1/apps/ace007bk/machines
+
+DEBUG <-- 200 https://api.machines.dev/v1/apps/ace007bk/machines (467.54ms)
+
+DEBUG [
+  {
+    "id": "287654da365138",
+    "name": "autumn-voice-2237",
+    "state": "stopped",
+    "region": "iad",
+    "instance_id": "01JT3JX84G6J46BGTJPQS44YKY",
+    "private_ip": "fdaa:16:eea8:a7b:3b1:bdde:9fdb:2",
+    "config": {
+      "env": {
+        "FLY_PROCESS_GROUP": "app",
+        "PRIMARY_REGION": "iad"
+      },
+      "init": {},
+      "guest": {
+        "cpu_kind": "shared",
+        "cpus": 1,
+        "memory_mb": 1024
+      },
+      "metadata": {
+        "fly_flyctl_version": "0.3.112",
+        "fly_platform_version": "v2",
+        "fly_process_group": "app",
+        "fly_release_id": "q1yZlz2KK40yVc72D3ZzJ58J6",
+        "fly_release_version": "3"
+      },
+      "services": [
+        {
+          "protocol": "tcp",
+          "internal_port": 8080,
+          "autostop": true,
+          "autostart": true,
+          "min_machines_running": 0,
+          "ports": [
+            {
+              "port": 80,
+              "handlers": [
+                "http"
+              ],
+              "force_https": true
+            },
+            {
+              "port": 443,
+              "handlers": [
+                "http",
+                "tls"
+              ]
+            }
+          ],
+          "force_instance_key": null
+        }
+      ],
+      "image": "registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "restart": {
+        "policy": "on-failure",
+        "max_retries": 10
+      }
+    },
+    "incomplete_config": null,
+    "image_ref": {
+      "registry": "registry.fly.io",
+      "repository": "ace007bk",
+      "tag": "deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "digest": "sha256:887c57efcb0c198da072eb9be9fda7dbb0ba00ae043058cfaa96497972712592",
+      "labels": null
+    },
+    "created_at": "2025-04-30T12:41:04Z",
+    "updated_at": "2025-04-30T15:00:55Z",
+    "events": [
+      {
+        "id": "01JT3KE4QVG4BA96A1QTY6S521",
+        "type": "exit",
+        "status": "stopped",
+        "request": {
+          "exit_event": {
+            "requested_stop": true,
+            "restarting": false,
+            "guest_exit_code": 0,
+            "guest_signal": -1,
+            "guest_error": "",
+            "exit_code": 0,
+            "signal": -1,
+            "error": "",
+            "oom_killed": false,
+            "exited_at": "2025-04-30T15:00:48.288Z"
+          },
+          "restart_count": 0
+        },
+        "source": "flyd",
+        "timestamp": 1746025255675
+      },
+      {
+        "id": "01JT3KDX1JWCZDT4FXP62HM0E5",
+        "type": "stop",
+        "status": "stopping",
+        "source": "user",
+        "timestamp": 1746025247794
+      },
+      {
+        "id": "01JT3K0S074AN2QBDD6ATHK50E",
+        "type": "start",
+        "status": "started",
+        "request": {
+          "gpu_spot_price": 0
+        },
+        "source": "flyd",
+        "timestamp": 1746024817671
+      },
+      {
+        "id": "01JT3K0R30EED51RQJZZA9HDBS",
+        "type": "start",
+        "status": "starting",
+        "source": "user",
+        "timestamp": 1746024816736
+      },
+      {
+        "id": "01JT3JYS5NCJZJ88PPDG6VAM8R",
+        "type": "update",
+        "status": "stopped",
+        "source": "flyd",
+        "timestamp": 1746024752309
+      }
+    ],
+    "host_status": "ok"
+  },
+  {
+    "id": "7815e7db09e5e8",
+    "name": "lively-flower-2776",
+    "state": "stopped",
+    "region": "iad",
+    "instance_id": "01JT3JX84DXA5MVZV276VHH3SV",
+    "private_ip": "fdaa:16:eea8:a7b:379:3822:1363:2",
+    "config": {
+      "env": {
+        "FLY_PROCESS_GROUP": "app",
+        "PRIMARY_REGION": "iad"
+      },
+      "init": {},
+      "guest": {
+        "cpu_kind": "shared",
+        "cpus": 1,
+        "memory_mb": 1024
+      },
+      "metadata": {
+        "fly_flyctl_version": "0.3.112",
+        "fly_platform_version": "v2",
+        "fly_process_group": "app",
+        "fly_release_id": "q1yZlz2KK40yVc72D3ZzJ58J6",
+        "fly_release_version": "3"
+      },
+      "services": [
+        {
+          "protocol": "tcp",
+          "internal_port": 8080,
+          "autostop": true,
+          "autostart": true,
+          "min_machines_running": 0,
+          "ports": [
+            {
+              "port": 80,
+              "handlers": [
+                "http"
+              ],
+              "force_https": true
+            },
+            {
+              "port": 443,
+              "handlers": [
+                "http",
+                "tls"
+              ]
+            }
+          ],
+          "force_instance_key": null
+        }
+      ],
+      "image": "registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "restart": {
+        "policy": "on-failure",
+        "max_retries": 10
+      }
+    },
+    "incomplete_config": null,
+    "image_ref": {
+      "registry": "registry.fly.io",
+      "repository": "ace007bk",
+      "tag": "deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+      "digest": "sha256:887c57efcb0c198da072eb9be9fda7dbb0ba00ae043058cfaa96497972712592",
+      "labels": null
+    },
+    "created_at": "2025-04-30T12:41:55Z",
+    "updated_at": "2025-04-30T14:52:29Z",
+    "events": [
+      {
+        "id": "01JT3JYPSQJJWSAGQ0JYAVB3JM",
+        "type": "update",
+        "status": "stopped",
+        "source": "flyd",
+        "timestamp": 1746024749879
+      },
+      {
+        "id": "01JT3JX852BXFYADFS6Z7DXGGP",
+        "type": "launch",
+        "status": "created",
+        "source": "user",
+        "timestamp": 1746024702114
+      }
+    ],
+    "host_status": "ok"
+  }
+]
+
+
+DEBUG --> POST https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease?ttl=13000000000
+
+DEBUG <-- 201 https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease?ttl=13000000000 (37.36ms)
+
+DEBUG {
+  "status": "success",
+  "data": {
+    "nonce": "2585960aefc7",
+    "expires_at": -3700718644,
+    "owner": "3b37d4e2-ee44-5536-bd3a-764a794a31a0@tokens.fly.io",
+    "description": "",
+    "version": "01JT3JX84G6J46BGTJPQS44YKY"
+  }
+}
+
+
+DEBUG --> POST https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease?ttl=13000000000
+
+DEBUG <-- 201 https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease?ttl=13000000000 (37.78ms)
+
+DEBUG {
+  "status": "success",
+  "data": {
+    "nonce": "7c91b9ed4a56",
+    "expires_at": -3700718644,
+    "owner": "3b37d4e2-ee44-5536-bd3a-764a794a31a0@tokens.fly.io",
+    "description": "",
+    "version": "01JT3JX84DXA5MVZV276VHH3SV"
+  }
+}
+
+
+DEBUG --> POST https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8
+
+DEBUG {
+  "config": {
+    "env": {
+      "FLY_PROCESS_GROUP": "app",
+      "PRIMARY_REGION": "iad"
+    },
+    "init": {},
+    "guest": {
+      "cpu_kind": "shared",
+      "cpus": 1,
+      "memory_mb": 1024
+    },
+    "metadata": {
+      "fly_flyctl_version": "0.3.112",
+      "fly_platform_version": "v2",
+      "fly_process_group": "app",
+      "fly_release_id": "Z960BNMooxl63u8YwywnjM7O4",
+      "fly_release_version": "4"
+    },
+    "services": [
+      {
+        "protocol": "tcp",
+        "internal_port": 8080,
+        "autostop": true,
+        "autostart": true,
+        "min_machines_running": 0,
+        "ports": [
+          {
+            "port": 80,
+            "handlers": [
+              "http"
+            ],
+            "force_https": true
+          },
+          {
+            "port": 443,
+            "handlers": [
+              "http",
+              "tls"
+            ]
+          }
+        ],
+        "force_instance_key": null
+      }
+    ],
+    "image": "registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7"
+  },
+  "region": "iad",
+  "skip_launch": true
+}
+
+DEBUG {0xc000be9260}
+DEBUG --> POST https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138
+
+DEBUG {
+  "config": {
+    "env": {
+      "FLY_PROCESS_GROUP": "app",
+      "PRIMARY_REGION": "iad"
+    },
+    "init": {},
+    "guest": {
+      "cpu_kind": "shared",
+      "cpus": 1,
+      "memory_mb": 1024
+    },
+    "metadata": {
+      "fly_flyctl_version": "0.3.112",
+      "fly_platform_version": "v2",
+      "fly_process_group": "app",
+      "fly_release_id": "Z960BNMooxl63u8YwywnjM7O4",
+      "fly_release_version": "4"
+    },
+    "services": [
+      {
+        "protocol": "tcp",
+        "internal_port": 8080,
+        "autostop": true,
+        "autostart": true,
+        "min_machines_running": 0,
+        "ports": [
+          {
+            "port": 80,
+            "handlers": [
+              "http"
+            ],
+            "force_https": true
+          },
+          {
+            "port": 443,
+            "handlers": [
+              "http",
+              "tls"
+            ]
+          }
+        ],
+        "force_instance_key": null
+      }
+    ],
+    "image": "registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7"
+  },
+  "region": "iad",
+  "skip_launch": true
+}
+
+DEBUG {0xc000e52060}
+DEBUG <-- 200 https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8 (956.69ms)
+
+DEBUG {
+  "id": "7815e7db09e5e8",
+  "name": "lively-flower-2776",
+  "state": "created",
+  "region": "iad",
+  "instance_id": "01JT3KKF1SCJ81SNZENAEKNFFS",
+  "private_ip": "fdaa:16:eea8:a7b:379:3822:1363:2",
+  "config": {
+    "env": {
+      "FLY_PROCESS_GROUP": "app",
+      "PRIMARY_REGION": "iad"
+    },
+    "init": {},
+    "guest": {
+      "cpu_kind": "shared",
+      "cpus": 1,
+      "memory_mb": 1024
+    },
+    "metadata": {
+      "fly_flyctl_version": "0.3.112",
+      "fly_platform_version": "v2",
+      "fly_process_group": "app",
+      "fly_release_id": "Z960BNMooxl63u8YwywnjM7O4",
+      "fly_release_version": "4"
+    },
+    "services": [
+      {
+        "protocol": "tcp",
+        "internal_port": 8080,
+        "autostop": true,
+        "autostart": true,
+        "min_machines_running": 0,
+        "ports": [
+          {
+            "port": 80,
+            "handlers": [
+              "http"
+            ],
+            "force_https": true
+          },
+          {
+            "port": 443,
+            "handlers": [
+              "http",
+              "tls"
+            ]
+          }
+        ],
+        "force_instance_key": null
+      }
+    ],
+    "image": "registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+    "restart": {
+      "policy": "on-failure",
+      "max_retries": 10
+    }
+  },
+  "incomplete_config": null,
+  "image_ref": {
+    "registry": "registry.fly.io",
+    "repository": "ace007bk",
+    "tag": "deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+    "digest": "sha256:43dec14f078c0aeae3e810a5708292a54651310ee852251c16f2c2a86cb5d8d7",
+    "labels": null
+  },
+  "created_at": "2025-04-30T12:41:55Z",
+  "updated_at": "2025-04-30T15:03:50Z",
+  "events": [
+    {
+      "id": "01JT3KKF2GTTDTXJQGRH066RS7",
+      "type": "launch",
+      "status": "created",
+      "source": "user",
+      "timestamp": 1746025430096
+    }
+  ],
+  "host_status": "ok"
+}
+
+
+DEBUG <-- 200 https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138 (967.37ms)
+
+DEBUG {
+  "id": "287654da365138",
+  "name": "autumn-voice-2237",
+  "state": "created",
+  "region": "iad",
+  "instance_id": "01JT3KKF1WYGQGQ9VV3H51724C",
+  "private_ip": "fdaa:16:eea8:a7b:3b1:bdde:9fdb:2",
+  "config": {
+    "env": {
+      "FLY_PROCESS_GROUP": "app",
+      "PRIMARY_REGION": "iad"
+    },
+    "init": {},
+    "guest": {
+      "cpu_kind": "shared",
+      "cpus": 1,
+      "memory_mb": 1024
+    },
+    "metadata": {
+      "fly_flyctl_version": "0.3.112",
+      "fly_platform_version": "v2",
+      "fly_process_group": "app",
+      "fly_release_id": "Z960BNMooxl63u8YwywnjM7O4",
+      "fly_release_version": "4"
+    },
+    "services": [
+      {
+        "protocol": "tcp",
+        "internal_port": 8080,
+        "autostop": true,
+        "autostart": true,
+        "min_machines_running": 0,
+        "ports": [
+          {
+            "port": 80,
+            "handlers": [
+              "http"
+            ],
+            "force_https": true
+          },
+          {
+            "port": 443,
+            "handlers": [
+              "http",
+              "tls"
+            ]
+          }
+        ],
+        "force_instance_key": null
+      }
+    ],
+    "image": "registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+    "restart": {
+      "policy": "on-failure",
+      "max_retries": 10
+    }
+  },
+  "incomplete_config": null,
+  "image_ref": {
+    "registry": "registry.fly.io",
+    "repository": "ace007bk",
+    "tag": "deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+    "digest": "sha256:43dec14f078c0aeae3e810a5708292a54651310ee852251c16f2c2a86cb5d8d7",
+    "labels": null
+  },
+  "created_at": "2025-04-30T12:41:04Z",
+  "updated_at": "2025-04-30T15:03:50Z",
+  "events": [
+    {
+      "id": "01JT3KKF2K8WCPA8Y6ZY8RZW0W",
+      "type": "launch",
+      "status": "created",
+      "source": "user",
+      "timestamp": 1746025430099
+    }
+  ],
+  "host_status": "ok"
+}
+
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease
+
+DEBUG <-- 404 https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease (113.14ms)
+
+DEBUG {
+  "status": "error",
+  "message": "lease not found"
+}
+
+
+DEBUG <-- 404 https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease (113.97ms)
+
+DEBUG {
+  "status": "error",
+  "message": "lease not found"
+}
+
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease
+
+DEBUG <-- 404 https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease (50ms)
+
+DEBUG {
+  "status": "error",
+  "message": "lease not found"
+}
+
+
+DEBUG <-- 404 https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease (52.65ms)
+
+DEBUG {
+  "status": "error",
+  "message": "lease not found"
+}
+
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease
+
+DEBUG <-- 404 https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease (53.57ms)
+
+DEBUG {
+  "status": "error",
+  "message": "lease not found"
+}
+
+
+DEBUG <-- 404 https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease (54.17ms)
+
+DEBUG {
+  "status": "error",
+  "message": "lease not found"
+}
+
+
+DEBUG --> POST https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease?ttl=13
+
+DEBUG --> POST https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease?ttl=13
+
+DEBUG <-- 201 https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease?ttl=13 (62.17ms)
+
+DEBUG {
+  "status": "success",
+  "data": {
+    "nonce": "2585960aefc7",
+    "expires_at": 1746025446,
+    "owner": "3b37d4e2-ee44-5536-bd3a-764a794a31a0@tokens.fly.io",
+    "description": "",
+    "version": "01JT3JX84G6J46BGTJPQS44YKY"
+  }
+}
+
+
+DEBUG got lease on machine 287654da365138: &{success 0xc0005063c0  }
+
+DEBUG <-- 201 https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease?ttl=13 (57.78ms)
+
+DEBUG {
+  "status": "success",
+  "data": {
+    "nonce": "7c91b9ed4a56",
+    "expires_at": 1746025446,
+    "owner": "3b37d4e2-ee44-5536-bd3a-764a794a31a0@tokens.fly.io",
+    "description": "",
+    "version": "01JT3JX84DXA5MVZV276VHH3SV"
+  }
+}
+
+
+DEBUG got lease on machine 7815e7db09e5e8: &{success 0xc000506680  }
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease
+
+DEBUG --> DELETE https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease
+
+DEBUG <-- 200 https://api.machines.dev/v1/apps/ace007bk/machines/7815e7db09e5e8/lease (42.62ms)
+
+DEBUG {
+  "status": "success",
+  "data": {
+    "ok": true
+  }
+}
+
+
+DEBUG <-- 200 https://api.machines.dev/v1/apps/ace007bk/machines/287654da365138/lease (43.6ms)
+
+DEBUG {
+  "status": "success",
+  "data": {
+    "ok": true
+  }
+}
+
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "\nmutation UpdateRelease ($input: UpdateReleaseInput!) {\n\tupdateRelease(input: $input) {\n\t\trelease {\n\t\t\tid\n\t\t}\n\t}\n}\n",
+  "variables": {
+    "input": {
+      "clientMutationId": "",
+      "metadata": {
+        "post_deployment_info": {
+          "flyctl_version": "0.3.112",
+          "error": ""
+        }
+      },
+      "releaseId": "Z960BNMooxl63u8YwywnjM7O4",
+      "status": "complete"
+    }
+  },
+  "operationName": "UpdateRelease"
+}
+
+DEBUG {0xc0007d1020}
+DEBUG <-- 200 https://api.fly.io/graphql (107.79ms)
+
+DEBUG {
+  "data": {
+    "updateRelease": {
+      "release": {
+        "id": "Z960BNMooxl63u8YwywnjM7O4"
+      }
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query ($appName: String!) { app(name: $appName) { ipAddresses { nodes { id address type region createdAt network { name organization { slug } } serviceName } } sharedIpAddress } }",
+  "variables": {
+    "appName": "ace007bk"
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (92.91ms)
+
+DEBUG {
+  "data": {
+    "app": {
+      "sharedIpAddress": null,
+      "ipAddresses": {
+        "nodes": [
+          {
+            "id": "ip_4jq72jwpwno9w3o8",
+            "address": "137.66.7.163",
+            "type": "v4",
+            "region": "global",
+            "createdAt": "2025-04-23T21:02:35Z",
+            "network": null,
+            "serviceName": null
+          }
+        ]
+      }
+    }
+  }
+}
+
+DEBUG Task manager done
+DEBUG done monitoring tokens
+DEBUG started querying for host issues
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($appName: String!) { apphostissues:app(name: $appName) { hostIssues { nodes { internalId message createdAt updatedAt } } } }",
+  "variables": {
+    "appName": "ace007bk"
+  }
+}
+
+
+DEBUG {}
+DEBUG started querying for statuspage incidents
+DEBUG <-- 200 https://api.fly.io/graphql (92.81ms)
+
+DEBUG {
+  "data": {
+    "apphostissues": {
+      "hostIssues": {
+        "nodes": []
+      }
+    }
+  }
+}
+
+DEBUG querying for host issues resulted to []
+DEBUG querying for statuspage incidents resulted to &{[]}

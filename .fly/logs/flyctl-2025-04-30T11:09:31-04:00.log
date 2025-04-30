@@ -1,0 +1,2592 @@
+DEBUG Loaded flyctl config from/home/ace007bk/.fly/config.yml
+DEBUG determined hostname: "penguin"
+DEBUG determined working directory: "/home/ace007bk"
+DEBUG determined config directory: "/home/ace007bk/.fly"
+DEBUG ensured config directory exists.
+DEBUG ensured config directory perms.
+DEBUG cache loaded.
+DEBUG config initialized.
+DEBUG skipped querying for new release
+DEBUG checking for updates...
+DEBUG client initialized.
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (445.86ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG app config loaded from /home/ace007bk/fly.toml
+DEBUG Starting task manager
+DEBUG monitoring tokens at /home/ace007bk/.fly/config.yml
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query ($appName: String!) { appbasic:app(name: $appName) { id name platformVersion organization { id internalNumericId slug rawSlug paidPlan } } }",
+  "variables": {
+    "appName": "ace007bk"
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (647.24ms)
+
+DEBUG {
+  "data": {
+    "appbasic": {
+      "id": "ace007bk",
+      "name": "ace007bk",
+      "platformVersion": "machines",
+      "organization": {
+        "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+        "internalNumericId": "1060900",
+        "slug": "personal",
+        "rawSlug": "ace-718",
+        "paidPlan": true
+      }
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token= (672.69ms)
+
+DEBUG {
+  "data": [
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:49:56.026528Z",
+        "message": "waiting for machine to be reachable on 0.0.0.0:8080 (waited 12.243296765s so far)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:42.137626183Z",
+        "message": "Pulling container image registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:42.138960282Z",
+        "message": "Pulling container image registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.13358Z",
+        "message": "[PR04] could not find a good candidate within 2 attempts at load balancing",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.056087Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.326193Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.534628Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.600715Z",
+        "message": "[PR04] could not find a good candidate within 2 attempts at load balancing",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.080969Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.401016Z",
+        "message": "[PR03] could not find a good candidate within 2 attempts at load balancing. last error: [PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:44.563762Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:45.337862Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:45.41929Z",
+        "message": "[PR04] could not find a good candidate within 2 attempts at load balancing",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:45.369433Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:46.093458Z",
+        "message": "[PR04] could not find a good candidate within 2 attempts at load balancing",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:46.035515Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:51:46.062849Z",
+        "message": "[PM08] machine is in a non-startable state: created",
+        "level": "error",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:52:00.691866Z",
+        "message": "[PR04] could not find a good candidate within 20 attempts at load balancing",
+        "level": "error",
+        "instance": "",
+        "region": "ams",
+        "meta": {
+          "region": "ams",
+          "instance": "",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:52:29.313444612Z",
+        "message": "Successfully prepared image registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR (47.17580946s)",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:52:29.755128115Z",
+        "message": "Configuring firecracker",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:52:30.873939218Z",
+        "message": "Successfully prepared image registry.fly.io/ace007bk:deployment-01JT3JPKMCWP3BMJPDWY6GD9FR (48.734967748s)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:52:30.035723Z",
+        "message": "[PR03] could not find a good candidate within 20 attempts at load balancing. last error: [PR01] no known healthy instances found for route tcp/443. (hint: is your app shut down? is there an ongoing deployment with a volume or are you using the 'immediate' strategy? have your app's instances all reached their hard limit?)",
+        "level": "error",
+        "instance": "",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:52:32.101896814Z",
+        "message": "Configuring firecracker",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:36.733743Z",
+        "message": "Starting machine",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:36.817202916Z",
+        "message": "2025-04-30T14:53:36.817169778 [01JT3JX84G6J46BGTJPQS44YKY:main] Running Firecracker v1.7.0",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:37.554526269Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting init (commit: dd0aead)...",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:37.644558509Z",
+        "message": "\u001b[32m INFO\u001b[0m Preparing to run: `python app.py` as root",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:37.646411505Z",
+        "message": "\u001b[32m INFO\u001b[0m [fly api proxy] listening at /.fly/api",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:37.678166751Z",
+        "message": "Machine started in 935ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:37.680884Z",
+        "message": "machine started in 947.162657ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.021289756Z",
+        "message": "2025/04/30 14:53:38 INFO SSH listening listen_address=[fdaa:16:eea8:a7b:3b1:bdde:9fdb:2]:22",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.248445631Z",
+        "message": " * Serving Flask app 'app'",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.248474413Z",
+        "message": " * Debug mode: off",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.251695849Z",
+        "message": "\u001b[31m\u001b[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.\u001b[0m",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.251700902Z",
+        "message": " * Running on all addresses (0.0.0.0)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.251701591Z",
+        "message": " * Running on http://127.0.0.1:8080",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.251701926Z",
+        "message": " * Running on http://172.19.18.210:8080",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.251777198Z",
+        "message": "\u001b[33mPress CTRL+C to quit\u001b[0m",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.308974Z",
+        "message": "machine became reachable in 628.034557ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.565145299Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:38] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:38.907233548Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:38] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:39.24844796Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:39] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:39.592936699Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:39] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:39.936524418Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:39] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:40.2672024Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:40] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:40.606538974Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:40] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:41.032717679Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:41] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:41.372870628Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:41] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:41.802176583Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:41] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:42.147645679Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:42] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:42.495414993Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:42] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:42.923064505Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:42] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:43.264055534Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:43] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:43.627639522Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:43] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T14:53:44.053557643Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 14:53:44] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.823886Z",
+        "message": "App ace007bk has excess capacity, autostopping machine 287654da365138. 0 out of 1 machines left running (region=iad, process group=app)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.828590822Z",
+        "message": "\u001b[32m INFO\u001b[0m Sending signal SIGINT to main child process w/ PID 631",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831697541Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039735, 'message': {'message_id': 23, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745940927, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831707181Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039736, 'message': {'message_id': 24, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745940968, 'text': '🎯 Set Target Token'}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831708119Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039737, 'message': {'message_id': 25, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745940971, 'text': '🎲 Set Probabilities'}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831708684Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039738, 'message': {'message_id': 26, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745940976, 'text': '🔁 Start Cycling Boost'}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831709088Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039739, 'message': {'message_id': 27, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745940980, 'text': '⏱️ Set Loop Delay'}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831709544Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039740, 'message': {'message_id': 29, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745946113, 'text': '🎯 Set Target Token'}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831710095Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039741, 'message': {'message_id': 30, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745946145, 'text': '/set_token', 'entities': [{'offset': 0, 'length': 10, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.83171049Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039742, 'message': {'message_id': 32, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745946188, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831710872Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039743, 'message': {'message_id': 53, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745949092, 'text': '/set_token', 'entities': [{'offset': 0, 'length': 10, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831719953Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039744, 'message': {'message_id': 57, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745951316, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831720456Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039745, 'message': {'message_id': 58, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745951610, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831720828Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039746, 'message': {'message_id': 59, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745952693, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831721282Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039747, 'message': {'message_id': 60, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745953458, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831721764Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039748, 'message': {'message_id': 61, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1745991961, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831722246Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039749, 'message': {'message_id': 62, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1746017070, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:47.831722735Z",
+        "message": "📩 Incoming Telegram update: {'update_id': 588039750, 'message': {'message_id': 63, 'from': {'id': 6600506367, 'is_bot': False, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'language_code': 'en', 'is_premium': True}, 'chat': {'id': 6600506367, 'first_name': 'FLIP', 'username': 'We_Flip_The_Market', 'type': 'private'}, 'date': 1746019180, 'text': '/start', 'entities': [{'offset': 0, 'length': 6, 'type': 'bot_command'}]}}",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:48.18323914Z",
+        "message": "\u001b[32m INFO\u001b[0m Main child exited normally with code: 0",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:48.205975358Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting clean up.",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:48.205981275Z",
+        "message": "\u001b[33m WARN\u001b[0m could not unmount /rootfs: EINVAL: Invalid argument",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:00:48.20598202Z",
+        "message": "[  431.300877] reboot: Restarting system",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:03:50.121419956Z",
+        "message": "Pulling container image registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:03:50.123336459Z",
+        "message": "Pulling container image registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:04:31.215120424Z",
+        "message": "Successfully prepared image registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7 (41.091776433s)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:04:32.322478366Z",
+        "message": "Configuring firecracker",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:04:35.567351561Z",
+        "message": "Successfully prepared image registry.fly.io/ace007bk:deployment-01JT3KD1Q4J24VZJB3TYTHVWN7 (45.445921128s)",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:04:36.762148495Z",
+        "message": "Configuring firecracker",
+        "level": "info",
+        "instance": "7815e7db09e5e8",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "7815e7db09e5e8",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:09.995156Z",
+        "message": "Starting machine",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:10.083221091Z",
+        "message": "2025-04-30T15:05:10.083186461 [01JT3KKF1WYGQGQ9VV3H51724C:main] Running Firecracker v1.7.0",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:10.851986932Z",
+        "message": "\u001b[32m INFO\u001b[0m Starting init (commit: dd0aead)...",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:10.94459965Z",
+        "message": "\u001b[32m INFO\u001b[0m Preparing to run: `python app.py` as root",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:10.951661943Z",
+        "message": "\u001b[32m INFO\u001b[0m [fly api proxy] listening at /.fly/api",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:10.981379Z",
+        "message": "machine started in 986.251234ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:10.979023905Z",
+        "message": "Machine started in 977ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "runner"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.361108731Z",
+        "message": "2025/04/30 15:05:11 INFO SSH listening listen_address=[fdaa:16:eea8:a7b:3b1:bdde:9fdb:2]:22",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.585115693Z",
+        "message": " * Serving Flask app 'app'",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.585172288Z",
+        "message": " * Debug mode: off",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.589555901Z",
+        "message": "\u001b[31m\u001b[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.\u001b[0m",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.589580763Z",
+        "message": " * Running on all addresses (0.0.0.0)",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.589581845Z",
+        "message": " * Running on http://127.0.0.1:8080",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.589582411Z",
+        "message": " * Running on http://172.19.18.210:8080",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.589633386Z",
+        "message": "\u001b[33mPress CTRL+C to quit\u001b[0m",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:11.750535Z",
+        "message": "machine became reachable in 769.097205ms",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "proxy"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    },
+    {
+      "id": "",
+      "type": "logs",
+      "attributes": {
+        "timestamp": "2025-04-30T15:05:12.011178949Z",
+        "message": "172.16.18.210 - - [30/Apr/2025 15:05:12] \"POST /webhook HTTP/1.1\" 200 -",
+        "level": "info",
+        "instance": "287654da365138",
+        "region": "iad",
+        "meta": {
+          "region": "iad",
+          "instance": "287654da365138",
+          "event": {
+            "provider": "app"
+          },
+          "http": null,
+          "error": null,
+          "url": null
+        }
+      }
+    }
+  ],
+  "meta": {
+    "next_token": "1746025512011178949"
+  }
+}
+
+
+DEBUG <-- 200 https://api.fly.io/graphql (104.29ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (152.12ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (131.61ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (173.92ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (123.89ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (128.66ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (134.92ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (123.54ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (117.69ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (119.47ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (117.91ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (154.45ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (118.91ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (126.03ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (130.88ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (110.56ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (129.61ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (135.35ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (118.73ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (111.05ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (139.23ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (127ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (112.53ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG <-- 200 https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949 (118.67ms)
+
+DEBUG {
+  "data": [],
+  "meta": {
+    "next_token": ""
+  }
+}
+
+
+DEBUG --> GET https://api.fly.io/api/v1/apps/ace007bk/logs?next_token=1746025512011178949
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (489.44ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (499.67ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (513.93ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG done monitoring tokens
+DEBUG Config has metrics token
+
+DEBUG Task manager done

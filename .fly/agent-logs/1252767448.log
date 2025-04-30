@@ -1,0 +1,294 @@
+2025/04/30 09:20:23.003530 srv OK 14139
+2025/04/30 09:20:23.003911 #1 connected ...
+2025/04/30 09:20:23.004036 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 09:20:23.004114 #1 <- (   44) "set-token cfg /home/ace007bk/.fly/config.yml"
+2025/04/30 09:20:23.004806 #1 -> (    4) "\x02\x00ok"
+2025/04/30 09:20:23.004881 #1 <- (    4) "ping"
+2025/04/30 09:20:23.005037 #1 -> (   57) "7\x00ok {\"PID\":14139,\"Version\":\"0.3.112\",\"Background\":true}\n"
+2025/04/30 09:20:23.005085 #1 dropped.
+2025/04/30 09:20:23.005783 #2 connected ...
+2025/04/30 09:20:23.005885 #2 <- (   44) "set-token cfg /home/ace007bk/.fly/config.yml"
+2025/04/30 09:20:23.006326 #2 -> (    4) "\x02\x00ok"
+2025/04/30 09:20:23.007011 #2 <- (   19) "establish personal "
+2025/04/30 09:20:23.007075 #2 establishing tunnel for personal, 
+2025/04/30 09:20:24.373486 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 09:20:24.846748 srv returning port: 59750
+2025/04/30 09:20:24.846820 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 09:20:25.008478 #2 -> (  741) "\xe3\x02ok {\"WireGuardState\":{\"org\":\"personal\",\"name\":\"interactive-penguin-americansoil718-gmail-com-01JT3DP1XMZCWVBRQEV40XWGCM\",\"region\":\"iad\",\"localPrivateKey\":\"[redacted]\",\"localpublic\":\"7Zh6gjvxHfjKhrvcwTVlhssZx6dVfXmVcO3m7bHLWhk=\",\"dns\":\"\",\"peer\":{\"peerip\":\"fdaa:16:eea8:a7b:ce2:0:a:2\",\"endpointip\":\"iad1.gateway.6pn.dev\",\"pubkey\":\"R2in3C4C5I1AVyoSrmsOgSkhPDKAegwUg6zwkLrhryk=\"}},\"TunnelConfig\":{\"LocalPrivateKey\":\"[redacted]\",\"LocalNetwork\":\"fdaa:16:eea8:a7b:ce2:0:a:0/120\",\"RemotePublicKey\":\"R2in3C4C5I1AVyoSrmsOgSkhPDKAegwUg6zwkLrhryk=\",\"RemoteNetwork\":\"fdaa:16:eea8::/48\",\"Endpoint\":\"iad1.gateway.6pn.dev:51820\",\"DNS\":\"fdaa:16:eea8::3\",\"KeepAlive\":0,\"MTU\":0,\"LogLevel\":0}}\n"
+2025/04/30 09:20:25.008620 #2 dropped.
+2025/04/30 09:20:25.008742 #3 connected ...
+2025/04/30 09:20:25.009655 srv personal, map[personal:0xc000b02000]
+2025/04/30 09:20:25.009735 srv config change at: 2025-04-30 09:20:24.629134497 -0400 EDT
+2025/04/30 09:20:25.009863 #3 <- (   44) "set-token cfg /home/ace007bk/.fly/config.yml"
+2025/04/30 09:20:25.010655 #3 -> (    4) "\x02\x00ok"
+2025/04/30 09:20:25.010736 #3 <- (   15) "probe personal "
+2025/04/30 09:20:25.010807 srv probing "personal" ...
+2025/04/30 09:20:25.455679 srv "personal" probed: fdaa:16:eea8::3
+2025/04/30 09:20:25.455824 #3 -> (    4) "\x02\x00ok"
+2025/04/30 09:20:25.455885 #3 dropped.
+2025/04/30 09:20:25.456656 #4 connected ...
+2025/04/30 09:20:25.456870 #4 <- (   42) "connect personal [fdaa:16:eea8::3]:4223 0 "
+2025/04/30 09:20:25.500817 #4 -> (    4) "\x02\x00ok"
+2025/04/30 09:22:23.548509 srv personal, map[personal:0xc000b033b0]
+2025/04/30 09:22:23.548583 srv validated wireguard peers
+2025/04/30 09:22:34.045937 #4 dropped.
+2025/04/30 09:24:23.695779 srv personal, map[personal:0xc000851680]
+2025/04/30 09:24:23.695825 srv validated wireguard peers
+2025/04/30 09:26:23.840830 srv personal, map[personal:0xc00068b5f0]
+2025/04/30 09:26:23.840879 srv validated wireguard peers
+2025/04/30 09:28:24.030628 srv personal, map[personal:0xc00076b440]
+2025/04/30 09:28:24.030676 srv validated wireguard peers
+2025/04/30 10:25:01.777067 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:37984->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:25:01.777175 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:37984->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:25:03.925131 srv failed pruning invalid peers: Not authorized to read this organization's WireGuard peers.
+2025/04/30 10:25:03.925278 srv personal, map[personal:0xc00068b290]
+2025/04/30 10:25:03.925309 srv validated wireguard peers
+2025/04/30 10:25:06.778208 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:37984->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:25:10.089106 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 10:25:11.778568 srv resetting connection due to error: failed to write msg: failed to write frame: failed to flush: write tcp 100.115.92.194:37984->104.225.8.204:443: write: broken pipe
+2025/04/30 10:25:13.848878 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:25:13.849076 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:25:16.789601 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:37984->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:25:18.851465 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:25:19.462222 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 10:25:19.998856 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 10:25:20.089217 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 10:25:23.849591 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:25:29.462560 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 10:25:29.970677 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 10:27:04.462362 srv personal, map[personal:0xc000b021b0]
+2025/04/30 10:27:04.462427 srv validated wireguard peers
+2025/04/30 10:29:05.022967 srv personal, map[personal:0xc000850cf0]
+2025/04/30 10:29:05.023034 srv validated wireguard peers
+2025/04/30 10:31:05.565930 srv personal, map[personal:0xc000185c20]
+2025/04/30 10:31:05.565978 srv validated wireguard peers
+2025/04/30 10:33:06.097583 srv personal, map[personal:0xc000850750]
+2025/04/30 10:33:06.097635 srv validated wireguard peers
+2025/04/30 10:35:06.681908 srv personal, map[personal:0xc00076b050]
+2025/04/30 10:35:06.681961 srv validated wireguard peers
+2025/04/30 10:37:07.294187 srv personal, map[personal:0xc000b021b0]
+2025/04/30 10:37:07.294233 srv validated wireguard peers
+2025/04/30 10:47:22.456228 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:42010->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:47:22.456404 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:42010->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:47:24.916865 srv failed pruning invalid peers: Not authorized to read this organization's WireGuard peers.
+2025/04/30 10:47:24.916928 srv personal, map[personal:0xc00002db00]
+2025/04/30 10:47:24.916941 srv validated wireguard peers
+2025/04/30 10:47:27.456477 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:42010->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:47:29.573692 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 10:47:32.509694 srv resetting connection due to error: failed to write msg: failed to write frame: failed to flush: write tcp 100.115.92.194:42010->104.225.8.204:443: write: broken pipe
+2025/04/30 10:47:37.456543 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:42010->104.225.8.204:443: read: connection reset by peer
+2025/04/30 10:47:39.574149 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 10:47:49.598536 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:47:49.598874 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:47:54.598878 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:47:58.946867 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 10:47:59.508404 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 10:47:59.598841 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+2025/04/30 10:48:08.947696 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 10:48:09.371636 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 10:49:25.033371 srv personal, map[personal:0xc00076aea0]
+2025/04/30 10:49:25.033422 srv validated wireguard peers
+2025/04/30 10:51:25.179120 srv personal, map[personal:0xc000b02a20]
+2025/04/30 10:51:25.179159 srv validated wireguard peers
+2025/04/30 10:53:25.286749 srv personal, map[personal:0xc000b02480]
+2025/04/30 10:53:25.286780 srv validated wireguard peers
+2025/04/30 10:55:25.386437 srv personal, map[personal:0xc00076b290]
+2025/04/30 10:55:25.386487 srv validated wireguard peers
+2025/04/30 10:57:25.893376 srv personal, map[personal:0xc000b02240]
+2025/04/30 10:57:25.893406 srv validated wireguard peers
+2025/04/30 10:59:26.026313 srv personal, map[personal:0xc000850a20]
+2025/04/30 10:59:26.026379 srv validated wireguard peers
+2025/04/30 11:01:26.129168 srv personal, map[personal:0xc000b021b0]
+2025/04/30 11:01:26.129223 srv validated wireguard peers
+2025/04/30 11:03:26.239132 srv personal, map[personal:0xc00076b4d0]
+2025/04/30 11:03:26.239258 srv validated wireguard peers
+2025/04/30 11:05:26.362572 srv personal, map[personal:0xc000850d80]
+2025/04/30 11:05:26.362623 srv validated wireguard peers
+2025/04/30 11:07:26.982272 srv personal, map[personal:0xc00068b4d0]
+2025/04/30 11:07:26.982313 srv validated wireguard peers
+2025/04/30 11:09:27.133500 srv personal, map[personal:0xc000850630]
+2025/04/30 11:09:27.133550 srv validated wireguard peers
+2025/04/30 11:09:32.895514 #5 connected ...
+2025/04/30 11:09:32.895786 srv personal, map[personal:0xc00076b200]
+2025/04/30 11:09:32.895812 srv config change at: 2025-04-30 11:09:32.893340156 -0400 EDT
+2025/04/30 11:09:32.895843 #5 <- (   44) "set-token cfg /home/ace007bk/.fly/config.yml"
+2025/04/30 11:09:32.896074 #5 -> (    4) "\x02\x00ok"
+2025/04/30 11:09:32.896147 #5 <- (    4) "ping"
+2025/04/30 11:09:32.896213 #5 -> (   57) "7\x00ok {\"PID\":14139,\"Version\":\"0.3.112\",\"Background\":true}\n"
+2025/04/30 11:09:32.896231 #5 dropped.
+2025/04/30 11:09:32.896543 #6 connected ...
+2025/04/30 11:09:32.896582 #6 <- (   44) "set-token cfg /home/ace007bk/.fly/config.yml"
+2025/04/30 11:09:32.896841 #6 -> (    4) "\x02\x00ok"
+2025/04/30 11:09:32.896867 #6 <- (   19) "establish personal "
+2025/04/30 11:09:32.896889 #6 establishing tunnel for personal, 
+2025/04/30 11:09:33.429658 #6 -> (  741) "\xe3\x02ok {\"WireGuardState\":{\"org\":\"personal\",\"name\":\"interactive-penguin-americansoil718-gmail-com-01JT3DP1XMZCWVBRQEV40XWGCM\",\"region\":\"iad\",\"localPrivateKey\":\"[redacted]\",\"localpublic\":\"7Zh6gjvxHfjKhrvcwTVlhssZx6dVfXmVcO3m7bHLWhk=\",\"dns\":\"\",\"peer\":{\"peerip\":\"fdaa:16:eea8:a7b:ce2:0:a:2\",\"endpointip\":\"iad1.gateway.6pn.dev\",\"pubkey\":\"R2in3C4C5I1AVyoSrmsOgSkhPDKAegwUg6zwkLrhryk=\"}},\"TunnelConfig\":{\"LocalPrivateKey\":\"[redacted]\",\"LocalNetwork\":\"fdaa:16:eea8:a7b:ce2:0:a:0/120\",\"RemotePublicKey\":\"R2in3C4C5I1AVyoSrmsOgSkhPDKAegwUg6zwkLrhryk=\",\"RemoteNetwork\":\"fdaa:16:eea8::/48\",\"Endpoint\":\"iad1.gateway.6pn.dev:51820\",\"DNS\":\"fdaa:16:eea8::3\",\"KeepAlive\":0,\"MTU\":0,\"LogLevel\":0}}\n"
+2025/04/30 11:09:33.430072 #6 dropped.
+2025/04/30 11:09:33.431651 #7 connected ...
+2025/04/30 11:09:33.431845 #7 <- (   44) "set-token cfg /home/ace007bk/.fly/config.yml"
+2025/04/30 11:09:33.432793 #7 -> (    4) "\x02\x00ok"
+2025/04/30 11:09:33.433016 #7 <- (   15) "probe personal "
+2025/04/30 11:09:33.433063 srv probing "personal" ...
+2025/04/30 11:09:36.578859 srv "personal" probed: fdaa:16:eea8::3
+2025/04/30 11:09:36.579068 #7 -> (    4) "\x02\x00ok"
+2025/04/30 11:09:36.579184 #7 dropped.
+2025/04/30 11:09:36.579876 #8 connected ...
+2025/04/30 11:09:36.580162 #8 <- (   42) "connect personal [fdaa:16:eea8::3]:4223 0 "
+2025/04/30 11:09:36.616072 #8 -> (    4) "\x02\x00ok"
+2025/04/30 11:11:27.244277 srv personal, map[personal:0xc00002cbd0]
+2025/04/30 11:11:27.244328 srv validated wireguard peers
+2025/04/30 11:13:27.378448 srv personal, map[personal:0xc00076a090]
+2025/04/30 11:13:27.378502 srv validated wireguard peers
+2025/04/30 11:13:28.256990 #8 dropped.
+2025/04/30 11:15:27.485229 srv personal, map[personal:0xc000850b40]
+2025/04/30 11:15:27.485292 srv validated wireguard peers
+2025/04/30 11:17:28.003958 srv personal, map[personal:0xc000850990]
+2025/04/30 11:17:28.004009 srv validated wireguard peers
+2025/04/30 11:19:28.118479 srv personal, map[personal:0xc000b02ab0]
+2025/04/30 11:19:28.118527 srv validated wireguard peers
+2025/04/30 11:20:33.498054 srv resetting connection due to error: failed to get reader: failed to read frame header: EOF
+2025/04/30 11:20:33.498404 srv resetting connection due to error: failed to get reader: failed to read frame header: EOF
+2025/04/30 11:20:38.498989 srv resetting connection due to error: failed to get reader: failed to read frame header: EOF
+2025/04/30 11:20:39.574172 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 11:20:43.498361 srv resetting connection due to error: failed to write msg: failed to write frame: failed to flush: write tcp 100.115.92.194:53948->104.225.8.204:443: write: broken pipe
+2025/04/30 11:20:48.499057 srv resetting connection due to error: failed to get reader: failed to read frame header: EOF
+2025/04/30 11:20:49.573489 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 11:21:28.126331 srv failed pruning invalid peers: Post "https://api.fly.io/graphql": EOF
+2025/04/30 11:21:28.126516 srv personal, map[personal:0xc000850ea0]
+2025/04/30 11:21:28.126544 srv validated wireguard peers
+2025/04/30 11:23:28.136884 srv failed pruning invalid peers: Post "https://api.fly.io/graphql": EOF
+2025/04/30 11:23:28.137080 srv personal, map[personal:0xc00076a090]
+2025/04/30 11:23:28.137158 srv validated wireguard peers
+2025/04/30 11:29:26.477200 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:41376->104.225.8.204:443: read: connection reset by peer
+2025/04/30 11:29:26.477336 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:41376->104.225.8.204:443: read: connection reset by peer
+2025/04/30 11:29:30.590334 srv failed pruning invalid peers: Not authorized to read this organization's WireGuard peers.
+2025/04/30 11:29:30.590414 srv personal, map[personal:0xc000b02090]
+2025/04/30 11:29:30.590436 srv validated wireguard peers
+2025/04/30 11:29:31.477433 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:41376->104.225.8.204:443: read: connection reset by peer
+2025/04/30 11:29:34.530728 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 11:29:36.477959 srv resetting connection due to error: failed to write msg: failed to write frame: failed to flush: write tcp 100.115.92.194:41376->104.225.8.204:443: write: broken pipe
+2025/04/30 11:29:41.478076 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:41376->104.225.8.204:443: read: connection reset by peer
+2025/04/30 11:29:44.530591 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 11:29:52.694570 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+2025/04/30 11:29:52.694754 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+2025/04/30 11:29:57.694845 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+2025/04/30 11:29:58.904469 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 11:29:59.490950 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 11:30:02.694775 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+2025/04/30 11:30:08.913479 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 11:30:09.371638 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 11:31:31.114149 srv personal, map[personal:0xc0008503f0]
+2025/04/30 11:31:31.114196 srv validated wireguard peers
+2025/04/30 11:33:31.660395 srv personal, map[personal:0xc000b021b0]
+2025/04/30 11:33:31.660444 srv validated wireguard peers
+2025/04/30 11:35:32.155988 srv personal, map[personal:0xc000850630]
+2025/04/30 11:35:32.156060 srv validated wireguard peers
+2025/04/30 12:06:50.736647 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:40266->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:06:50.736897 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:40266->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:06:51.917953 srv failed pruning invalid peers: Not authorized to read this organization's WireGuard peers.
+2025/04/30 12:06:51.918036 srv personal, map[personal:0xc000851170]
+2025/04/30 12:06:51.918051 srv validated wireguard peers
+2025/04/30 12:06:55.736949 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:40266->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:07:00.293731 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 12:07:00.736828 srv resetting connection due to error: failed to write msg: failed to write frame: failed to flush: write tcp 100.115.92.194:40266->104.225.8.204:443: write: broken pipe
+2025/04/30 12:07:01.686138 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:07:01.688746 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:07:05.736911 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:40266->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:07:06.687027 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:07:09.667176 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 12:07:10.192396 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 12:07:10.294644 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 12:07:11.686310 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:07:19.667727 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 12:07:20.104785 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 12:08:52.431247 srv personal, map[personal:0xc00002cbd0]
+2025/04/30 12:08:52.431307 srv validated wireguard peers
+2025/04/30 12:10:52.951786 srv personal, map[personal:0xc0008505a0]
+2025/04/30 12:10:52.951835 srv validated wireguard peers
+2025/04/30 12:12:53.454026 srv personal, map[personal:0xc000850630]
+2025/04/30 12:12:53.454082 srv validated wireguard peers
+2025/04/30 12:34:14.600252 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54874->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:34:14.600433 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54874->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:34:15.586862 srv failed pruning invalid peers: Not authorized to read this organization's WireGuard peers.
+2025/04/30 12:34:15.586925 srv personal, map[personal:0xc00076b290]
+2025/04/30 12:34:15.586937 srv validated wireguard peers
+2025/04/30 12:34:19.601251 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54874->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:34:19.951177 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 12:34:24.600675 srv resetting connection due to error: failed to write msg: failed to write frame: failed to flush: write tcp 100.115.92.194:54874->104.225.8.204:443: write: broken pipe
+2025/04/30 12:34:29.600965 srv resetting connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54874->104.225.8.204:443: read: connection reset by peer
+2025/04/30 12:34:29.951438 srv (re-)connecting to wss://iad1.gateway.6pn.dev:443/
+2025/04/30 12:34:52.495322 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:34:52.495455 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:34:57.495584 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:34:59.324243 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 12:34:59.920759 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 12:35:02.496284 srv resetting synthetics agent connection due to error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+2025/04/30 12:35:09.323747 srv (re-)connecting synthetics agent to https://flynthetics.fly.dev/ws
+2025/04/30 12:35:09.822670 srv synthetics agent connected to https://flynthetics.fly.dev/ws
+2025/04/30 12:36:16.167389 srv personal, map[personal:0xc000850a20]
+2025/04/30 12:36:16.167462 srv validated wireguard peers
+2025/04/30 12:38:16.707335 srv personal, map[personal:0xc000850750]
+2025/04/30 12:38:16.707388 srv validated wireguard peers
+2025/04/30 12:40:17.249246 srv personal, map[personal:0xc00232e240]
+2025/04/30 12:40:17.249270 srv validated wireguard peers
+2025/04/30 12:42:17.814611 srv personal, map[personal:0xc000850750]
+2025/04/30 12:42:17.814651 srv validated wireguard peers
+2025/04/30 12:44:18.328567 srv personal, map[personal:0xc00232e240]
+2025/04/30 12:44:18.328857 srv validated wireguard peers
+2025/04/30 12:46:18.963842 srv personal, map[personal:0xc000850750]
+2025/04/30 12:46:18.963868 srv validated wireguard peers
+2025/04/30 12:48:19.533545 srv personal, map[personal:0xc000850630]
+2025/04/30 12:48:19.533605 srv validated wireguard peers
+2025/04/30 12:50:20.092735 srv personal, map[personal:0xc000b021b0]
+2025/04/30 12:50:20.092884 srv validated wireguard peers
+2025/04/30 12:52:20.624977 srv personal, map[personal:0xc00068b4d0]
+2025/04/30 12:52:20.625060 srv validated wireguard peers
+2025/04/30 12:54:21.192794 srv personal, map[personal:0xc00232e240]
+2025/04/30 12:54:21.192861 srv validated wireguard peers
+2025/04/30 12:56:21.792404 srv personal, map[personal:0xc00068b4d0]
+2025/04/30 12:56:21.792450 srv validated wireguard peers
+2025/04/30 12:58:22.422142 srv personal, map[personal:0xc000b021b0]
+2025/04/30 12:58:22.422213 srv validated wireguard peers
+2025/04/30 13:00:23.019921 srv personal, map[personal:0xc00232e750]
+2025/04/30 13:00:23.019980 srv validated wireguard peers
+2025/04/30 13:02:23.521193 srv personal, map[personal:0xc000b02870]
+2025/04/30 13:02:23.521244 srv validated wireguard peers
+2025/04/30 13:04:23.666568 srv personal, map[personal:0xc00068b5f0]
+2025/04/30 13:04:23.666619 srv validated wireguard peers
+2025/04/30 13:06:23.780063 srv personal, map[personal:0xc000850c60]
+2025/04/30 13:06:23.780172 srv validated wireguard peers
+2025/04/30 13:08:23.945418 srv personal, map[personal:0xc00232e900]
+2025/04/30 13:08:23.945444 srv validated wireguard peers
+2025/04/30 13:10:24.066605 srv personal, map[personal:0xc00232e990]
+2025/04/30 13:10:24.066663 srv validated wireguard peers
+2025/04/30 13:12:24.183839 srv personal, map[personal:0xc000850bd0]
+2025/04/30 13:12:24.183884 srv validated wireguard peers
+2025/04/30 13:14:24.358359 srv personal, map[personal:0xc00232e750]
+2025/04/30 13:14:24.358409 srv validated wireguard peers
+2025/04/30 13:16:24.469288 srv personal, map[personal:0xc00068b4d0]
+2025/04/30 13:16:24.469349 srv validated wireguard peers
+2025/04/30 13:18:24.611491 srv personal, map[personal:0xc000851200]
+2025/04/30 13:18:24.611554 srv validated wireguard peers
+2025/04/30 13:20:24.740718 srv personal, map[personal:0xc000850c60]
+2025/04/30 13:20:24.740752 srv validated wireguard peers
+2025/04/30 13:22:24.904490 srv personal, map[personal:0xc00232e510]
+2025/04/30 13:22:24.904518 srv validated wireguard peers
+2025/04/30 13:24:25.013014 srv personal, map[personal:0xc000b02510]
+2025/04/30 13:24:25.013054 srv validated wireguard peers
+2025/04/30 13:26:25.132355 srv personal, map[personal:0xc000b02f30]
+2025/04/30 13:26:25.132383 srv validated wireguard peers
+2025/04/30 13:28:25.249971 srv personal, map[personal:0xc000b025a0]
+2025/04/30 13:28:25.250037 srv validated wireguard peers
+2025/04/30 13:30:25.388967 srv personal, map[personal:0xc000184120]
+2025/04/30 13:30:25.389052 srv validated wireguard peers
+2025/04/30 13:32:25.497915 srv personal, map[personal:0xc00232e870]
+2025/04/30 13:32:25.497957 srv validated wireguard peers
+2025/04/30 13:34:25.608665 srv personal, map[personal:0xc000b022d0]
+2025/04/30 13:34:26.354208 srv validated wireguard peers
+2025/04/30 13:36:26.454037 srv personal, map[personal:0xc00232ea20]
+2025/04/30 13:36:26.456339 srv validated wireguard peers
+2025/04/30 13:38:26.610770 srv personal, map[personal:0xc000850990]
+2025/04/30 13:38:26.610842 srv validated wireguard peers
+2025/04/30 13:40:26.757771 srv personal, map[personal:0xc00232e5a0]
+2025/04/30 13:40:26.757838 srv validated wireguard peers
+2025/04/30 13:42:26.903582 srv personal, map[personal:0xc000b021b0]
+2025/04/30 13:42:26.903646 srv validated wireguard peers

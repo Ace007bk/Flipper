@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>🔥 Flip Leaderboard 🔥</title>
+    <style>
+        body { background: #0d0d0d; color: #00ff90; font-family: Arial, sans-serif; text-align: center; }
+        table { margin: 2em auto; width: 80%; border-collapse: collapse; }
+        th, td { padding: 12px; border-bottom: 1px solid #00ff90; }
+    </style>
+</head>
+<body>
+    <h1>🔥 Flip Burn Leaderboard 🔥</h1>
+    <table>
+        <thead>
+            <tr><th>Wallet</th><th>Total Burned</th><th>Last Burn</th></tr>
+        </thead>
+        <tbody>
+            {% for entry in leaderboard %}
+            <tr>
+                <td>{{ entry.wallet }}</td>
+                <td>{{ entry.burned }}</td>
+                <td>{{ entry.last_burn }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

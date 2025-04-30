@@ -1,0 +1,6941 @@
+DEBUG Loaded flyctl config from/home/ace007bk/.fly/config.yml
+DEBUG determined hostname: "penguin"
+DEBUG determined working directory: "/home/ace007bk"
+DEBUG determined config directory: "/home/ace007bk/.fly"
+DEBUG ensured config directory exists.
+DEBUG ensured config directory perms.
+DEBUG cache loaded.
+DEBUG config initialized.
+DEBUG skipped querying for new release
+DEBUG checking for updates...
+DEBUG client initialized.
+DEBUG Starting task manager
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (548.64ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG monitoring tokens at /home/ace007bk/.fly/config.yml
+DEBUG starting synthetics agent
+INFO running synthetics agent
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (104.25ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "\nmutation CreateLimitedAccessToken ($name: String!, $organizationId: ID!, $profile: String!, $profileParams: JSON, $expiry: String!) {\n\tcreateLimitedAccessToken(input: {name:$name,organizationId:$organizationId,profile:$profile,profileParams:$profileParams,expiry:$expiry}) {\n\t\tlimitedAccessToken {\n\t\t\ttokenHeader\n\t\t}\n\t}\n}\n",
+  "variables": {
+    "name": "Flynthetics read-only token",
+    "organizationId": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+    "profile": "flynthetics_read",
+    "profileParams": {},
+    "expiry": "1h"
+  },
+  "operationName": "CreateLimitedAccessToken"
+}
+
+DEBUG {0xc000a55920}
+DEBUG <-- 200 https://api.fly.io/graphql (201.15ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Can't find matching WireGuard configuration; creating new one
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query { viewer { ... on User { id email enablePaidHobby } ... on Macaroon { email } } }",
+  "variables": null
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (264.19ms)
+
+DEBUG {
+  "data": {
+    "viewer": {
+      "id": "2xPQ6Z4nQaxv5T0vkVy",
+      "email": "americansoil718@gmail.com",
+      "enablePaidHobby": true
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query { nearestRegion(wireguardGateway: true) { code name gatewayAvailable } }",
+  "variables": null
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (73.23ms)
+
+DEBUG {
+  "data": {
+    "nearestRegion": {
+      "code": "iad",
+      "name": "Ashburn, Virginia (US)",
+      "gatewayAvailable": true
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: AddWireGuardPeerInput!) { addWireGuardPeer(input: $input) { peerip endpointip pubkey } }",
+  "variables": {
+    "input": {
+      "name": "interactive-penguin-americansoil718-gmail-com-01JT3DP1XMZCWVBRQEV40XWGCM",
+      "nats": false,
+      "organizationId": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+      "pubkey": "0QK1Y7Z/fGaQfGOP1D4BXfwQIMO5cMySvBgNkIwiOhU=",
+      "region": "iad"
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (686.87ms)
+
+DEBUG {
+  "data": {
+    "createLimitedAccessToken": {
+      "limitedAccessToken": {
+        "tokenHeader": "FlyV1 fm2_lJPECAAAAAAACKEHxBCl2JeVwHSoQkwXiLt70cfCwrVodHRwczovL2FwaS5mbHkuaW8vdjGWAJLOABAwJAELk7lodHRwczovL2FwaS5mbHkuaW8vYWFhL3YxxDyr4+Gui5yBrH6rdxyfGqHNnVz7uG6k1pVNY+imveqG0TMyq2b9w2xzbUWU1so/kN3A093CfxMLeWeDyoHETlXnN0/TsjuqZUBH9FafhCLZ5QCg4dmGF4Eq4LjVuhCmOt/rDtyy1RayfeASsOS2qlbTzWCdJBCnfJ/QQ2E/HINFUfkIv72NPLM1u47y5w2SlAORgAWRgAHEIOPHvi5vO33nCJO4DT4lzl+dZTycBnpXNJ4rB4eAug78,fm2_lJPETlXnN0/TsjuqZUBH9FafhCLZ5QCg4dmGF4Eq4LjVuhCmOt/rDtyy1RayfeASsOS2qlbTzWCdJBCnfJ/QQ2E/HINFUfkIv72NPLM1u47y58QQIe1oZE4iMDtmP0YfLJFK+cO5aHR0cHM6Ly9hcGkuZmx5LmlvL2FhYS92MZgEks5oEiN6zmgSMagXzgAPkAMKkc4AD5ADDMQQw1u9ijQiwNOex9scYE6xfcQgTMKPn/Gur/QYGpNWhqGZl7FOJpf5pjDUVshoPcHv4fo="
+      }
+    }
+  }
+}
+
+DEBUG start listening for probes
+DEBUG <-- 200 https://api.fly.io/graphql (1.07s)
+
+DEBUG {
+  "data": {
+    "addWireGuardPeer": {
+      "peerip": "fdaa:16:eea8:a7b:ce2:0:a:2",
+      "endpointip": "iad1.gateway.6pn.dev",
+      "pubkey": "R2in3C4C5I1AVyoSrmsOgSkhPDKAegwUg6zwkLrhryk="
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (527.74ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (496.14ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG <-- 200 https://api.fly.io/graphql (535.39ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (628.41ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (549.06ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG <-- 200 https://api.fly.io/graphql (143.56ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (545.69ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (564.63ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (141.96ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://squirrel.flyio.net","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=squirrel.flyio.net ip_protocol=ip4
+level=error msg="Resolution with IP protocol failed" target=squirrel.flyio.net err="lookup squirrel.flyio.net on 100.115.92.193:53: no such host"
+level=error msg="Error resolving address" err="lookup squirrel.flyio.net on 100.115.92.193:53: no such host"
+level=error msg="Probe failed" duration_seconds=0.115550509
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (539.93ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (555.88ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (186.47ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (520.46ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (5.37s)
+
+DEBUG <-- 200 https://api.fly.io/graphql (5.35s)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": null
+  },
+  "errors": [
+    {
+      "message": "Not authorized to read this organization's WireGuard peers.",
+      "locations": [
+        {
+          "line": 1,
+          "column": 50
+        }
+      ],
+      "path": [
+        "validateWireGuardPeers"
+      ],
+      "extensions": {
+        "code": "UNAUTHORIZED"
+      }
+    }
+  ]
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:54704->213.188.216.159:443: read: connection reset by peer
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (473.13ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+ERROR read error: failed to get reader: use of closed network connection
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (506.5ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (527.67ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (531.54ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (703.33ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (556.66ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (484.35ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (579.33ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (539.27ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (538.78ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (507.94ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://api.fly.io/graphql","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=api.fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=api.fly.io ip=77.83.143.220
+level=info msg="Making HTTP request" url=https://77.83.143.220/graphql host=api.fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T10:32:56.777881894-04:00 dnsDone=2025-04-30T10:32:56.777881894-04:00 connectDone=2025-04-30T10:32:56.830637894-04:00 gotConn=2025-04-30T10:32:56.881680857-04:00 responseStart=2025-04-30T10:32:56.936819015-04:00 tlsStart=2025-04-30T10:32:56.830830639-04:00 tlsDone=2025-04-30T10:32:56.881657706-04:00 end=2025-04-30T10:32:56.976338318-04:00
+level=info msg="Probe succeeded" duration_seconds=0.25103516
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (528.41ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (580.05ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (548.85ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (575.74ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (543.24ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (512.79ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (609.43ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (534.46ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (5.49s)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG <-- 200 https://api.fly.io/graphql (5.5s)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": null
+  },
+  "errors": [
+    {
+      "message": "Not authorized to read this organization's WireGuard peers.",
+      "locations": [
+        {
+          "line": 1,
+          "column": 50
+        }
+      ],
+      "path": [
+        "validateWireGuardPeers"
+      ],
+      "extensions": {
+        "code": "UNAUTHORIZED"
+      }
+    }
+  ]
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (76.6ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:32954->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: use of closed network connection
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (491.52ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (494.84ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (111.43ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (511.18ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (485.87ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (141.4ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (577.1ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (536.04ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (106.12ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (538.53ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (552.26ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (96.19ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://registry.fly.io/__health","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=registry.fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=registry.fly.io ip=77.83.143.221
+level=info msg="Making HTTP request" url=https://77.83.143.221/__health host=registry.fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T10:55:53.031724426-04:00 dnsDone=2025-04-30T10:55:53.031724426-04:00 connectDone=2025-04-30T10:55:53.068953079-04:00 gotConn=2025-04-30T10:55:53.122791979-04:00 responseStart=2025-04-30T10:55:53.164554532-04:00 tlsStart=2025-04-30T10:55:53.069072993-04:00 tlsDone=2025-04-30T10:55:53.122448171-04:00 end=2025-04-30T10:55:53.165212463-04:00
+level=info msg="Probe succeeded" duration_seconds=0.201898831
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (610.69ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (514.53ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (504.91ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (562.46ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (555.35ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (127.48ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (593.13ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (496.58ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (99.31ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (514.37ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (477.58ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (106.44ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://fly.io","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=fly.io ip=37.16.18.81
+level=info msg="Making HTTP request" url=https://37.16.18.81 host=fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T11:04:02.125034249-04:00 dnsDone=2025-04-30T11:04:02.125034249-04:00 connectDone=2025-04-30T11:04:02.171463314-04:00 gotConn=2025-04-30T11:04:02.217740552-04:00 responseStart=2025-04-30T11:04:02.274477564-04:00 tlsStart=2025-04-30T11:04:02.171558923-04:00 tlsDone=2025-04-30T11:04:02.217718114-04:00 end=2025-04-30T11:04:02.471661572-04:00
+level=info msg="Probe succeeded" duration_seconds=0.386426892
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (600.66ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (543.98ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (120.6ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (574.01ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (549.68ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (616.79ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (568.46ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (521.36ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (148.72ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (529.6ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (535.01ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (557.44ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (106.71ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://squirrel.flyio.net","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=squirrel.flyio.net ip_protocol=ip4
+level=error msg="Resolution with IP protocol failed" target=squirrel.flyio.net err="lookup squirrel.flyio.net on 100.115.92.193:53: no such host"
+level=error msg="Error resolving address" err="lookup squirrel.flyio.net on 100.115.92.193:53: no such host"
+level=error msg="Probe failed" duration_seconds=0.059883081
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (569.38ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (548.87ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (125.67ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (651.36ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (545.72ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (103.05ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (563.43ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (667.91ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (515.91ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (536.23ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (581.87ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://apda-synthetics.flyio.net","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=apda-synthetics.flyio.net ip_protocol=ip4
+level=info msg="Resolved target address" target=apda-synthetics.flyio.net ip=66.241.124.240
+level=info msg="Making HTTP request" url=https://66.241.124.240 host=apda-synthetics.flyio.net
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T11:19:26.698306889-04:00 dnsDone=2025-04-30T11:19:26.698306889-04:00 connectDone=2025-04-30T11:19:26.735010974-04:00 gotConn=2025-04-30T11:19:26.798862665-04:00 responseStart=2025-04-30T11:19:26.85362559-04:00 tlsStart=2025-04-30T11:19:26.735190884-04:00 tlsDone=2025-04-30T11:19:26.7978159-04:00 end=2025-04-30T11:19:26.854072499-04:00
+level=info msg="Probe succeeded" duration_seconds=0.354160304
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (107.01ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (528.96ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (557ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (498.28ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (514.01ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (5.51s)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG <-- 200 https://api.fly.io/graphql (7.15s)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": null
+  },
+  "errors": [
+    {
+      "message": "Not authorized to read this organization's WireGuard peers.",
+      "locations": [
+        {
+          "line": 1,
+          "column": 50
+        }
+      ],
+      "path": [
+        "validateWireGuardPeers"
+      ],
+      "extensions": {
+        "code": "UNAUTHORIZED"
+      }
+    }
+  ]
+}
+
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:47410->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: use of closed network connection
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (513.29ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (632.01ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (520.69ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (3.74s)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (533.61ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (542.5ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (559.4ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (477.27ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (491.54ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (5.55s)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG <-- 200 https://api.fly.io/graphql (5.56s)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": null
+  },
+  "errors": [
+    {
+      "message": "Not authorized to read this organization's WireGuard peers.",
+      "locations": [
+        {
+          "line": 1,
+          "column": 50
+        }
+      ],
+      "path": [
+        "validateWireGuardPeers"
+      ],
+      "extensions": {
+        "code": "UNAUTHORIZED"
+      }
+    }
+  ]
+}
+
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:34084->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: use of closed network connection
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (536.06ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (498.33ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (509.36ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (536.93ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (516.32ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (512.09ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (619.44ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (528.4ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (499.31ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (5.26s)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": null
+  },
+  "errors": [
+    {
+      "message": "Not authorized to read this organization's WireGuard peers.",
+      "locations": [
+        {
+          "line": 1,
+          "column": 50
+        }
+      ],
+      "path": [
+        "validateWireGuardPeers"
+      ],
+      "extensions": {
+        "code": "UNAUTHORIZED"
+      }
+    }
+  ]
+}
+
+DEBUG <-- 200 https://api.fly.io/graphql (5.36s)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (501.01ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: failed to read frame header: read tcp 100.115.92.194:33344->213.188.216.159:443: read: connection reset by peer
+ERROR read error: failed to get reader: use of closed network connection
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (532.66ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (576.89ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (527.28ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (530.1ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (536.69ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (539.06ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (529.61ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (540.12ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (524.02ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (521.33ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (563.58ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (555.39ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://fly.io","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=fly.io ip=37.16.18.81
+level=info msg="Making HTTP request" url=https://37.16.18.81 host=fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T12:43:02.638174654-04:00 dnsDone=2025-04-30T12:43:02.638174654-04:00 connectDone=2025-04-30T12:43:02.676471069-04:00 gotConn=2025-04-30T12:43:02.731188415-04:00 responseStart=2025-04-30T12:43:02.771076471-04:00 tlsStart=2025-04-30T12:43:02.676771149-04:00 tlsDone=2025-04-30T12:43:02.731163101-04:00 end=2025-04-30T12:43:02.92732199-04:00
+level=info msg="Probe succeeded" duration_seconds=0.339217388
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (759.6ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (505.82ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (144.05ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (516.04ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (626.6ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (114.2ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (561.56ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (565.68ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (92.35ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (513.52ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (553.45ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (93.41ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://debug.flyio.net","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=debug.flyio.net ip_protocol=ip4
+level=info msg="Resolved target address" target=debug.flyio.net ip=37.16.21.10
+level=info msg="Making HTTP request" url=https://37.16.21.10 host=debug.flyio.net
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T12:50:32.665702472-04:00 dnsDone=2025-04-30T12:50:32.665702472-04:00 connectDone=2025-04-30T12:50:32.694406816-04:00 gotConn=2025-04-30T12:50:32.753427567-04:00 responseStart=2025-04-30T12:50:32.794470628-04:00 tlsStart=2025-04-30T12:50:32.6946408-04:00 tlsDone=2025-04-30T12:50:32.752564512-04:00 end=2025-04-30T12:50:32.795171632-04:00
+level=info msg="Probe succeeded" duration_seconds=0.247916869
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (516.25ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (528.47ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (94.01ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (645.32ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (563.6ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (89.46ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (542.8ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (596.83ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (101.67ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (532.62ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (626.28ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (86.79ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://api.fly.io/__status","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=api.fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=api.fly.io ip=77.83.143.220
+level=info msg="Making HTTP request" url=https://77.83.143.220/__status host=api.fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T12:58:23.173978671-04:00 dnsDone=2025-04-30T12:58:23.173978671-04:00 connectDone=2025-04-30T12:58:23.216968688-04:00 gotConn=2025-04-30T12:58:23.267616282-04:00 responseStart=2025-04-30T12:58:23.306772861-04:00 tlsStart=2025-04-30T12:58:23.21716484-04:00 tlsDone=2025-04-30T12:58:23.267592907-04:00 end=2025-04-30T12:58:23.307128424-04:00
+level=info msg="Probe succeeded" duration_seconds=0.134525747
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (693.71ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (590.46ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG <-- 200 https://api.fly.io/graphql (204.42ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (636.25ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (552.13ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG <-- 200 https://api.fly.io/graphql (498.84ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (545.79ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (591.11ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG <-- 200 https://api.fly.io/graphql (137.9ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (559.64ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://api.fly.io/__status","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=api.fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=api.fly.io ip=77.83.143.220
+level=info msg="Making HTTP request" url=https://77.83.143.220/__status host=api.fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T13:06:08.221205191-04:00 dnsDone=2025-04-30T13:06:08.221205191-04:00 connectDone=2025-04-30T13:06:08.26144811-04:00 gotConn=2025-04-30T13:06:08.316161424-04:00 responseStart=2025-04-30T13:06:08.351276505-04:00 tlsStart=2025-04-30T13:06:08.261552966-04:00 tlsDone=2025-04-30T13:06:08.316132093-04:00 end=2025-04-30T13:06:08.351628175-04:00
+level=info msg="Probe succeeded" duration_seconds=0.179927273
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (466.81ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (106.73ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (598.11ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (546.07ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (163.98ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (541.48ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (556.07ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (118.95ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (561.79ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (564.17ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (114.91ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG received from server{"module":"http_2xx","target":"https://registry.fly.io/__health","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG <-- 200 https://api.fly.io/graphql (533.88ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=registry.fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=registry.fly.io ip=77.83.143.221
+level=info msg="Making HTTP request" url=https://77.83.143.221/__health host=registry.fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T13:13:23.523486537-04:00 dnsDone=2025-04-30T13:13:23.523486537-04:00 connectDone=2025-04-30T13:13:23.593680715-04:00 gotConn=2025-04-30T13:13:23.658276478-04:00 responseStart=2025-04-30T13:13:23.697243456-04:00 tlsStart=2025-04-30T13:13:23.593810429-04:00 tlsDone=2025-04-30T13:13:23.657542432-04:00 end=2025-04-30T13:13:23.697792541-04:00
+level=info msg="Probe succeeded" duration_seconds=0.237179978
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (538.7ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (170.65ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (533.9ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (548.45ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (107.2ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (527.12ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (858.83ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (133.22ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (566.18ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (518.6ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (127.08ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://apda-synthetics.flyio.net","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=apda-synthetics.flyio.net ip_protocol=ip4
+level=info msg="Resolved target address" target=apda-synthetics.flyio.net ip=66.241.124.240
+level=info msg="Making HTTP request" url=https://66.241.124.240 host=apda-synthetics.flyio.net
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T13:20:42.009618797-04:00 dnsDone=2025-04-30T13:20:42.009618797-04:00 connectDone=2025-04-30T13:20:42.0554067-04:00 gotConn=2025-04-30T13:20:42.107609852-04:00 responseStart=2025-04-30T13:20:42.153086066-04:00 tlsStart=2025-04-30T13:20:42.055508952-04:00 tlsDone=2025-04-30T13:20:42.107371797-04:00 end=2025-04-30T13:20:42.154299964-04:00
+level=info msg="Probe succeeded" duration_seconds=0.283842853
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (656.4ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (518.53ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (162.26ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (516.6ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (579.63ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (101.75ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (577.99ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (547.25ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (113.22ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (646.49ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (644.92ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (108.8ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://api.fly.io/graphql","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=api.fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=api.fly.io ip=77.83.143.220
+level=info msg="Making HTTP request" url=https://77.83.143.220/graphql host=api.fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T13:28:26.760262583-04:00 dnsDone=2025-04-30T13:28:26.760262583-04:00 connectDone=2025-04-30T13:28:26.80348023-04:00 gotConn=2025-04-30T13:28:26.852370476-04:00 responseStart=2025-04-30T13:28:26.90453912-04:00 tlsStart=2025-04-30T13:28:26.803629518-04:00 tlsDone=2025-04-30T13:28:26.852347293-04:00 end=2025-04-30T13:28:26.948292414-04:00
+level=info msg="Probe succeeded" duration_seconds=0.189723818
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (597.45ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (510.21ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (135.31ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (677.66ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (545.53ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (106.71ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (492.52ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG Attempting to upgrade authentication token
+DEBUG Request:https://api.fly.io/aaa/v1/.well-known/macfly/3p
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (583.76ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (108.68ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://squirrel.flyio.net","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=squirrel.flyio.net ip_protocol=ip4
+level=error msg="Resolution with IP protocol failed" target=squirrel.flyio.net err="lookup squirrel.flyio.net on 100.115.92.193:53: no such host"
+level=error msg="Error resolving address" err="lookup squirrel.flyio.net on 100.115.92.193:53: no such host"
+level=error msg="Probe failed" duration_seconds=0.054115004
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (559.11ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (524.86ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (97.54ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (748.96ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (552.99ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (145.89ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (513.71ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (622.34ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (143.2ms)
+
+DEBUG {
+  "data": {
+    "validateWireGuardPeers": {
+      "invalidPeerIps": []
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (625.91ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG received from server{"module":"http_2xx","target":"https://registry.fly.io/__health","ip_protocol":"ip4"}
+DEBUG proccessing probes
+DEBUG probe result sent to server. log: level=info msg="Resolving target address" target=registry.fly.io ip_protocol=ip4
+level=info msg="Resolved target address" target=registry.fly.io ip=77.83.143.221
+level=info msg="Making HTTP request" url=https://77.83.143.221/__health host=registry.fly.io
+level=info msg="Received HTTP response" status_code=200
+level=info msg="Response timings for roundtrip" roundtrip=0 start=2025-04-30T13:41:53.624156297-04:00 dnsDone=2025-04-30T13:41:53.624156297-04:00 connectDone=2025-04-30T13:41:53.656431745-04:00 gotConn=2025-04-30T13:41:53.707433953-04:00 responseStart=2025-04-30T13:41:53.752318328-04:00 tlsStart=2025-04-30T13:41:53.656542953-04:00 tlsDone=2025-04-30T13:41:53.707312655-04:00 end=2025-04-30T13:41:53.752822944-04:00
+level=info msg="Probe succeeded" duration_seconds=0.173804583
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "query($admin: Boolean!) { organizations(admin: $admin) { nodes { id slug name type paidPlan billable viewerRole internalNumericId } } }",
+  "variables": {
+    "admin": false
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 https://api.fly.io/graphql (597.33ms)
+
+DEBUG {
+  "data": {
+    "organizations": {
+      "nodes": [
+        {
+          "id": "P7lZB0nw2ylg8sm1P5Rqp9JzZqIZ5gDPP",
+          "slug": "personal",
+          "name": "Ace",
+          "type": "PERSONAL",
+          "paidPlan": true,
+          "billable": true,
+          "viewerRole": "admin",
+          "internalNumericId": "1060900"
+        }
+      ]
+    }
+  }
+}
+
+DEBUG --> POST https://api.fly.io/graphql
+
+DEBUG {
+  "query": "mutation($input: ValidateWireGuardPeersInput!) { validateWireGuardPeers(input: $input) { invalidPeerIps } }",
+  "variables": {
+    "input": {
+      "peerIps": [
+        "fdaa:16:eea8:a7b:ce2:0:a:2"
+      ]
+    }
+  }
+}
+
+
+DEBUG {}
+DEBUG <-- 200 ht

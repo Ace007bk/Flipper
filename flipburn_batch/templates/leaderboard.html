@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 Flip Burn Leaderboard 🔥</title>
+  <style>
+    body { background: #000; color: #0f0; font-family: Arial, sans-serif; padding: 20px; }
+    h1 { text-align: center; color: #fff; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #0f0; padding: 10px; text-align: center; }
+    th { background: #0a0; color: #fff; }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr { display: block; }
+      th, td { text-align: right; padding-left: 50%; position: relative; }
+      th::before, td::before {
+        position: absolute; left: 10px; white-space: nowrap; font-weight: bold; color: #fff;
+      }
+      th:nth-of-type(1)::before { content: "Wallet"; }
+      th:nth-of-type(2)::before { content: "Total Burned"; }
+      th:nth-of-type(3)::before { content: "Last Burn"; }
+      td:nth-of-type(1)::before { content: "Wallet"; }
+      td:nth-of-type(2)::before { content: "Total Burned"; }
+      td:nth-of-type(3)::before { content: "Last Burn"; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 Flip Burn Leaderboard 🔥</h1>
+  <table id="leaderboard">
+    <thead>
+      <tr>
+        <th>Wallet</th>
+        <th>Total Burned</th>
+        <th>Last Burn</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    async function loadLeaderboard() {
+      try {
+        const response = await fetch("/api/leaderboard");
+        const data = await response.json();
+        const tbody = document.querySelector("#leaderboard tbody");
+        tbody.innerHTML = "";
+        data.forEach(entry => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${entry.wallet}</td>
+            <td>${entry.burned}</td>
+            <td>${entry.last_burn}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      } catch (error) {
+        console.error("Error loading leaderboard:", error);
+      }
+    }
+    window.onload = loadLeaderboard;
+  </script>
+</body>
+</html>
