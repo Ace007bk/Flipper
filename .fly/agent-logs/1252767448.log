@@ -292,3 +292,62 @@
 2025/04/30 13:40:26.757838 srv validated wireguard peers
 2025/04/30 13:42:26.903582 srv personal, map[personal:0xc000b021b0]
 2025/04/30 13:42:26.903646 srv validated wireguard peers
+2025/04/30 13:44:27.097701 srv personal, map[personal:0xc000850cf0]
+2025/04/30 13:44:27.102860 srv validated wireguard peers
+2025/04/30 13:46:27.223956 srv personal, map[personal:0xc00232e240]
+2025/04/30 13:46:27.224028 srv validated wireguard peers
+2025/04/30 13:48:27.365803 srv personal, map[personal:0xc00068b560]
+2025/04/30 13:48:27.366045 srv validated wireguard peers
+2025/04/30 13:50:27.461463 srv personal, map[personal:0xc000850cf0]
+2025/04/30 13:50:27.461532 srv validated wireguard peers
+2025/04/30 13:52:27.693959 srv personal, map[personal:0xc0008510e0]
+2025/04/30 13:52:27.694047 srv validated wireguard peers
+2025/04/30 13:54:27.819357 srv personal, map[personal:0xc00232eab0]
+2025/04/30 13:54:27.819437 srv validated wireguard peers
+2025/04/30 13:56:27.924410 srv personal, map[personal:0xc000850750]
+2025/04/30 13:56:27.924472 srv validated wireguard peers
+2025/04/30 13:58:28.021479 srv personal, map[personal:0xc000850630]
+2025/04/30 13:58:28.021514 srv validated wireguard peers
+2025/04/30 14:00:28.117803 srv personal, map[personal:0xc00232e510]
+2025/04/30 14:00:28.117830 srv validated wireguard peers
+2025/04/30 14:02:28.218144 srv personal, map[personal:0xc00232e3f0]
+2025/04/30 14:02:28.218201 srv validated wireguard peers
+2025/04/30 14:04:28.342826 srv personal, map[personal:0xc000b02900]
+2025/04/30 14:04:28.342854 srv validated wireguard peers
+2025/04/30 14:06:28.457312 srv personal, map[personal:0xc00232e900]
+2025/04/30 14:06:28.457337 srv validated wireguard peers
+2025/04/30 14:08:28.508765 srv failed pruning invalid peers: Post "https://api.fly.io/graphql": EOF
+2025/04/30 14:08:28.527629 srv personal, map[personal:0xc000850b40]
+2025/04/30 14:08:28.527681 srv validated wireguard peers
+2025/04/30 14:10:29.069349 srv personal, map[personal:0xc00076b050]
+2025/04/30 14:10:29.069411 srv validated wireguard peers
+2025/04/30 14:12:29.572859 srv personal, map[personal:0xc000850990]
+2025/04/30 14:12:29.572894 srv validated wireguard peers
+2025/04/30 14:14:30.070408 srv personal, map[personal:0xc000850630]
+2025/04/30 14:14:30.070449 srv validated wireguard peers
+2025/04/30 14:16:30.592236 srv personal, map[personal:0xc00076b320]
+2025/04/30 14:16:30.592303 srv validated wireguard peers
+2025/04/30 14:18:31.102075 srv personal, map[personal:0xc000b02ab0]
+2025/04/30 14:18:31.102117 srv validated wireguard peers
+2025/04/30 14:20:31.635542 srv personal, map[personal:0xc00232e240]
+2025/04/30 14:20:31.635590 srv validated wireguard peers
+2025/04/30 14:22:32.145515 srv personal, map[personal:0xc000b025a0]
+2025/04/30 14:22:32.145585 srv validated wireguard peers
+2025/04/30 14:24:32.665786 srv personal, map[personal:0xc00076b050]
+2025/04/30 14:24:32.665840 srv validated wireguard peers
+2025/04/30 14:26:33.140220 srv personal, map[personal:0xc00232e240]
+2025/04/30 14:26:33.140279 srv validated wireguard peers
+2025/04/30 14:28:33.677171 srv personal, map[personal:0xc000850e10]
+2025/04/30 14:28:33.677243 srv validated wireguard peers
+2025/04/30 14:30:34.181818 srv personal, map[personal:0xc00076b050]
+2025/04/30 14:30:34.181885 srv validated wireguard peers
+2025/04/30 14:32:34.708651 srv personal, map[personal:0xc000b023f0]
+2025/04/30 14:32:34.708698 srv validated wireguard peers
+2025/04/30 14:34:35.277083 srv personal, map[personal:0xc000850b40]
+2025/04/30 14:34:35.277183 srv validated wireguard peers
+2025/04/30 14:36:35.906631 srv personal, map[personal:0xc00232e870]
+2025/04/30 14:36:35.906680 srv validated wireguard peers
+2025/04/30 14:38:36.441297 srv personal, map[personal:0xc000851320]
+2025/04/30 14:38:36.441372 srv validated wireguard peers
+2025/04/30 14:40:36.974743 srv personal, map[personal:0xc00076b050]
+2025/04/30 14:40:36.974795 srv validated wireguard peers
