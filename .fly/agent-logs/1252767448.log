@@ -351,3 +351,31 @@
 2025/04/30 14:38:36.441372 srv validated wireguard peers
 2025/04/30 14:40:36.974743 srv personal, map[personal:0xc00076b050]
 2025/04/30 14:40:36.974795 srv validated wireguard peers
+2025/04/30 14:42:37.566729 srv personal, map[personal:0xc000850750]
+2025/04/30 14:42:37.566782 srv validated wireguard peers
+2025/04/30 14:44:38.065269 srv personal, map[personal:0xc00002cbd0]
+2025/04/30 14:44:38.065297 srv validated wireguard peers
+2025/04/30 14:46:38.592713 srv personal, map[personal:0xc00076b050]
+2025/04/30 14:46:38.592785 srv validated wireguard peers
+2025/04/30 14:48:39.081234 srv personal, map[personal:0xc000b02ab0]
+2025/04/30 14:48:39.081286 srv validated wireguard peers
+2025/04/30 14:50:39.679318 srv personal, map[personal:0xc00232e480]
+2025/04/30 14:50:39.679361 srv validated wireguard peers
+2025/04/30 14:52:40.174360 srv personal, map[personal:0xc0008510e0]
+2025/04/30 14:52:40.174423 srv validated wireguard peers
+2025/04/30 14:54:40.654810 srv personal, map[personal:0xc000b02ab0]
+2025/04/30 14:54:40.654877 srv validated wireguard peers
+2025/04/30 14:56:41.167068 srv personal, map[personal:0xc00232e630]
+2025/04/30 14:56:41.167188 srv validated wireguard peers
+2025/04/30 14:58:41.678680 srv personal, map[personal:0xc00076b4d0]
+2025/04/30 14:58:41.678706 srv validated wireguard peers
+2025/04/30 15:00:42.247538 srv personal, map[personal:0xc00232e510]
+2025/04/30 15:00:42.247626 srv validated wireguard peers
+2025/04/30 15:02:47.883963 srv personal, map[personal:0xc000b02900]
+2025/04/30 15:02:47.883988 srv validated wireguard peers
+2025/04/30 15:04:48.385475 srv personal, map[personal:0xc00076b200]
+2025/04/30 15:04:48.385668 srv validated wireguard peers
+2025/04/30 15:06:48.885764 srv personal, map[personal:0xc000851320]
+2025/04/30 15:06:48.885835 srv validated wireguard peers
+2025/04/30 15:08:49.384019 srv personal, map[personal:0xc00076b3b0]
+2025/04/30 15:08:49.384071 srv validated wireguard peers
